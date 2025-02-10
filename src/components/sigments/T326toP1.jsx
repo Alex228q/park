@@ -4,19 +4,19 @@ import Valve from "./Valve.jsx";
 import useStore from "../../store/store.js";
 
 const T326toP1 = () => {
-  const { selectedTank, selectedPump } = useStore();
-  let color = "transparent";
-  let displayState = "none";
+  const { selectedTank, selectedPumps } = useStore();
+  let color = "gray";
+  let index = 1;
 
-  if (selectedTank === "E-326" && selectedPump === "H-1") {
+  if (selectedTank === "E-326" && selectedPumps.includes("H-1")) {
     color = "green";
-    displayState = "flex";
+    index = 20;
   }
   return (
-    <>
+    <div style={{ zIndex: index, position: "absolute" }}>
       <Line length={22} top={597} left={1043} color={color} />
 
-      <Valve top={619} left={1036} title={"Б"} displayState={displayState} />
+      <Valve top={619} left={1036} title={"Б"} />
 
       <Line length={50} top={648} left={1043} color={color} />
 
@@ -29,23 +29,17 @@ const T326toP1 = () => {
       <Line length={90} top={984} left={978} color={color} />
 
       <Line isHorizontal length={60} top={1067} left={978} color={color} />
-      <Valve
-        toUp
-        top={1048}
-        left={1036}
-        title={"74"}
-        displayState={displayState}
-      />
+      <Valve toUp top={1048} left={1036} title={"74"} />
 
       <Line isHorizontal length={660} top={1067} left={1064} color={color} />
 
       <Line length={400} top={1068} left={1718} color={color} />
-      <Valve top={1467} left={1713} title={"3"} displayState={displayState} />
+      <Valve top={1467} left={1713} title={"3"} />
 
       <Line length={90} top={1496} left={1719} color={color} />
 
       <Line isHorizontal length={112} top={1579} left={1719} color={color} />
-    </>
+    </div>
   );
 };
 

@@ -10,8 +10,8 @@ const App = () => {
     <div className="relative">
       <TopTanks />
       <BottomTanks />
-      <T326toP2 />
       <T326toP1 />
+      <T326toP2 />
 
       <PumpStation35 />
       <Blank top={1840} left={1680} />
