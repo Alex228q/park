@@ -4,7 +4,9 @@ import BottomTanks from "./components/BottomTanks.jsx";
 import PumpStation35 from "./components/PumpStation35.jsx";
 import T326to35 from "./components/sigments/326/T326to35.jsx";
 import T325to35 from "./components/sigments/325/T325to35.jsx";
+import T322to35 from "./components/sigments/322/T322to35.jsx";
 import TopTanks from "./components/TopTanks.jsx";
+import T324to35 from "./components/sigments/324/T324to35.jsx";
 
 const App = () => {
   const [isDragging, setIsDragging] = useState(false);
@@ -49,6 +51,9 @@ const App = () => {
       <div className="relative">
         <TopTanks />
         <BottomTanks />
+        <T322to35 />
+        <T324to35 />
+
         <T325to35 />
         <T326to35 />
 
@@ -70,6 +75,8 @@ const App = () => {
     >
       <TopTanks />
       <BottomTanks />
+      <T322to35 />
+      <T324to35 />
       <T325to35 />
       <T326to35 />
 

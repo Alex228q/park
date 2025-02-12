@@ -1,4 +1,11 @@
-const Valve = ({ top = 0, left = 0, toUp = false, title, valveColor }) => {
+const Valve = ({
+  top = 0,
+  left = 0,
+  toUp = false,
+  title,
+  valveColor,
+  gapValve = "0px",
+}) => {
   const rotate = !toUp ? "rotate(90deg)" : "rotate(0deg)";
   const titleRotate = !toUp ? "rotate(270deg)" : "rotate(0deg)";
   return (
@@ -8,11 +15,12 @@ const Valve = ({ top = 0, left = 0, toUp = false, title, valveColor }) => {
         top: `${top}px`,
         left: `${left}px`,
         transform: rotate,
+        gap: gapValve,
       }}
     >
       <img src="./valve.png" alt="valve" />
 
-      <div className="text-3xl font-bold" style={{ transform: titleRotate }}>
+      <div className="text-xl font-semibold" style={{ transform: titleRotate }}>
         {title}
       </div>
 
