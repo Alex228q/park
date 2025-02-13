@@ -25,11 +25,11 @@ const T322toP4 = () => {
 
       <Line isHorizontal length={65} top={553} left={493} color={color} />
 
-      <Line length={225} top={553} left={556} color={color} />
+      <Line length={241} top={553} left={556} color={color} />
 
-      <Line isHorizontal length={330} top={774} left={556} color={color} />
+      <Line isHorizontal length={330} top={794} left={556} color={color} />
 
-      <Line length={30} top={751} left={885} color={color} />
+      <Line length={50} top={751} left={885} color={color} />
 
       <Line isHorizontal length={30} top={751} left={885} color={color} />
 

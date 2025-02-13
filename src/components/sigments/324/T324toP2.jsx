@@ -56,11 +56,11 @@ const T324toP2 = () => {
   gapValve="2px"
 />
 
-<Line length={323} top={456} left={757} color={color} />
+<Line length={339} top={456} left={757} color={color} />
 
-<Line isHorizontal length={130} top={774} left={757} color={color} />
+      <Line isHorizontal length={130} top={794} left={757} color={color} />
 
-      <Line length={30} top={751} left={885} color={color} />
+      <Line length={50} top={751} left={885} color={color} />
 
       <Line isHorizontal length={30} top={751} left={885} color={color} />
 

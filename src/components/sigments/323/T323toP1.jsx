@@ -3,50 +3,34 @@ import Valve from "../Valve.jsx";
 
 import useStore from "../../../store/store.js";
 
-const T324toP1 = () => {
+const T323toP1 = () => {
   const { selectedTank, selectedPumps } = useStore();
   let color = "gray";
   let index = 1;
   let valveColor = "red";
 
-  if (selectedTank === "E-324" && selectedPumps.includes("H-1")) {
+  if (selectedTank === "E-323" && selectedPumps.includes("H-1")) {
     color = "green";
     index = 20;
     valveColor = "green";
   }
   return (
     <div style={{ zIndex: index, position: "absolute" }}>
-      <Line isHorizontal length={55} top={187} left={651} color={color} />
+      <Line isHorizontal length={36} top={196} left={294} color={color} />
 
-      <Valve toUp top={170} left={706} title={"Б"} valveColor={valveColor} />
+      <Valve toUp top={179} left={330} title={"Б"} valveColor={valveColor} />
 
-      <Line isHorizontal length={70} top={187} left={735} color={color} />
+      <Line isHorizontal length={20} top={196} left={360} color={color} />
 
-      <Line length={15} top={187} left={804} color={color} />
+      <Line length={194} top={196} left={380} color={color} />
 
-      <Valve
-        top={201}
-        left={798}
-        title={"ЗМ-4"}
-        valveColor={valveColor}
-        gapValve="12px"
-      />
+      <Line isHorizontal length={40} top={389} left={380} color={color} />
 
-      <Line length={25} top={231} left={804} color={color} />
+      <Valve toUp top={372} left={420} title={"ЗМ-3"} valveColor={valveColor} />
 
-      <Line isHorizontal length={55} top={251} left={756} color={color} />
+      <Line isHorizontal length={308} top={389} left={450} color={color} />
 
-      <Line length={25} top={251} left={756} color={color} />
-
-      <Valve
-        top={275}
-        left={751}
-        title={"ЗМ-6"}
-        valveColor={valveColor}
-        gapValve="12px"
-      />
-
-      <Line length={122} top={305} left={756} color={color} />
+      <Line length={39} top={389} left={756} color={color} />
 
       <Valve
         top={427}
@@ -86,4 +70,4 @@ const T324toP1 = () => {
   );
 };
 
-export default T324toP1;
+export default T323toP1;

@@ -7,6 +7,10 @@ import T325to35 from "./components/sigments/325/T325to35.jsx";
 import T322to35 from "./components/sigments/322/T322to35.jsx";
 import TopTanks from "./components/TopTanks.jsx";
 import T324to35 from "./components/sigments/324/T324to35.jsx";
+import T323to35 from "./components/sigments/323/T323to35.jsx";
+import T332to35 from "./components/sigments/332/T332to35.jsx";
+import T333to35 from "./components/sigments/333/T333to35.jsx";
+import T334to35 from "./components/sigments/334/T334to35.jsx";
 
 const App = () => {
   const [isDragging, setIsDragging] = useState(false);
@@ -52,10 +56,13 @@ const App = () => {
         <TopTanks />
         <BottomTanks />
         <T322to35 />
+        <T323to35 />
         <T324to35 />
-
         <T325to35 />
         <T326to35 />
+        <T332to35 />
+        <T333to35 />
+        <T334to35 />
 
         <PumpStation35 />
         <Blank top={1840} left={3680} />
@@ -76,12 +83,16 @@ const App = () => {
       <TopTanks />
       <BottomTanks />
       <T322to35 />
+      <T323to35 />
       <T324to35 />
       <T325to35 />
       <T326to35 />
+      <T332to35 />
+      <T333to35 />
+      <T334to35 />
 
       <PumpStation35 />
-      <Blank top={1840} left={3680} />
+      <Blank top={1840} left={3280} />
     </div>
   );
 };
