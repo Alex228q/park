@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Blank from "./components/Blank.jsx";
 import BottomTanks from "./components/BottomTanks.jsx";
 import PumpStation35 from "./components/PumpStation35.jsx";
@@ -11,8 +11,36 @@ import T323to35 from "./components/sigments/323/T323to35.jsx";
 import T332to35 from "./components/sigments/332/T332to35.jsx";
 import T333to35 from "./components/sigments/333/T333to35.jsx";
 import T334to35 from "./components/sigments/334/T334to35.jsx";
+import FullScreenButton from "./components/FullScreenButton.jsx";
+import LoadingReck40 from "./components/LoadingReck40.jsx";
+import Pump1to40 from "./components/sigments/pump1/Pump1to40.jsx";
+import Pump2to40 from "./components/sigments/pump1/Pump2to40.jsx";
+import Pump3to40 from "./components/sigments/pump1/Pump3to40.jsx";
+import Pump4to40 from "./components/sigments/pump1/Pump4to40.jsx";
+import useStore from "./store/store.js";
 
 const App = () => {
+  const { selectedTank, selectedReck, setSelectedPump } = useStore();
+  const leftDirectMazut = ["E-322", "E-323", "E-324", "E-325", "E-326"];
+  const rightDirectMazut = ["E-332", "E-333", "E-334"];
+  useEffect(() => {
+    if (
+      leftDirectMazut.includes(selectedTank) &&
+      selectedReck === "910-40 (1)"
+    ) {
+      setSelectedPump("H-1");
+      setSelectedPump("H-2");
+    }
+
+    if (
+      rightDirectMazut.includes(selectedTank) &&
+      selectedReck === "910-40 (1)"
+    ) {
+      setSelectedPump("H-2");
+      setSelectedPump("H-3");
+    }
+  }, [selectedTank, selectedReck, setSelectedPump]);
+
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [startY, setStartY] = useState(0);
@@ -52,7 +80,7 @@ const App = () => {
   };
   if (isMobile) {
     return (
-      <div className="relative">
+      <div ref={containerRef} className="relative">
         <TopTanks />
         <BottomTanks />
         <T322to35 />
@@ -65,6 +93,12 @@ const App = () => {
         <T334to35 />
 
         <PumpStation35 />
+        <Pump1to40 />
+        <Pump2to40 />
+        <Pump3to40 />
+        <Pump4to40 />
+        <LoadingReck40 title="910-40 (1)" top={1900} left={3000} />
+        <LoadingReck40 title="910-10 (2)" top={2200} left={3000} />
         <Blank top={1840} left={3680} />
       </div>
     );
@@ -80,6 +114,7 @@ const App = () => {
       onMouseLeave={handleMouseUp}
       style={{ cursor: isDragging ? "grabbing" : "grab" }}
     >
+      <FullScreenButton />
       <TopTanks />
       <BottomTanks />
       <T322to35 />
@@ -92,7 +127,13 @@ const App = () => {
       <T334to35 />
 
       <PumpStation35 />
-      <Blank top={1840} left={3280} />
+      <Pump1to40 />
+      <Pump2to40 />
+      <Pump3to40 />
+      <Pump4to40 />
+      <LoadingReck40 title="910-40 (1)" top={1900} left={3000} />
+      <LoadingReck40 title="910-10 (2)" top={2200} left={3000} />
+      <Blank top={2540} left={3780} />
     </div>
   );
 };

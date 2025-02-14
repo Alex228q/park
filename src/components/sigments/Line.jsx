@@ -1,7 +1,7 @@
 const Line = ({
   length,
   isHorizontal = false,
-  color = "black",
+  color = "gray",
   thickness = 7,
   left = 0,
   top = 0,
