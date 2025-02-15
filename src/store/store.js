@@ -16,6 +16,7 @@ const useStore = create((set) => ({
   selectedReck: null,
   setSelectedReck: (itemId) =>
     set({
+      selectedPumps: [],
       selectedReck: itemId,
     }),
   selectedTank: null,

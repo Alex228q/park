@@ -1,5 +1,5 @@
-import Line from "../Line";
-import Valve from "../Valve";
+import Line from "../Line.jsx";
+import Valve from "../Valve.jsx";
 import useStore from "../../../store/store.js";
 
 const Pump1to40 = () => {
