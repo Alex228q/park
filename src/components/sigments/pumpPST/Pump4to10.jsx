@@ -18,9 +18,9 @@ const Pump4to10 = () => {
   return (
     <div style={{ zIndex: index, position: "absolute" }}>
       <Line isHorizontal length={20} top={1586} left={2670} color={color} />
-      <Line length={25} top={1586} left={2683} color={color} />
-      <Valve top={1610} left={2678} valveColor={valveColor} title={"28"} />
-      <Line length={144} top={1640} left={2683} color={color} />
+      <Line length={94} top={1586} left={2683} color={color} />
+      <Valve top={1680} left={2678} valveColor={valveColor} title={"28"} />
+      <Line length={74} top={1710} left={2683} color={color} />
 
       <Line isHorizontal length={74} top={1777} left={2687} color={color} />
       <Valve toUp top={1760} left={2760} valveColor={valveColor} title={"67"} />
