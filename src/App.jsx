@@ -34,16 +34,16 @@ const App = () => {
       leftDirectMazut.includes(selectedTank) &&
       selectedReck === "910-40 (1)"
     ) {
-      setSelectedPump("H-1");
       setSelectedPump("H-2");
+      setSelectedPump("H-3");
     }
 
     if (
       leftDirectMazut.includes(selectedTank) &&
       selectedReck === "910-10 (2)"
     ) {
-      setSelectedPump("H-1");
       setSelectedPump("H-2");
+      setSelectedPump("H-3");
     }
 
     if (
