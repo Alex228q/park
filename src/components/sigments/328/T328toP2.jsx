@@ -3,24 +3,28 @@ import Valve from "../Valve.jsx";
 import Arc from "../../Arc.jsx";
 import useStore from "../../../store/store.js";
 
-const T327toP2 = () => {
+const T328toP2 = () => {
   const { selectedTank, selectedPumps } = useStore();
   let color = "gray";
   let index = 1;
   let valveColor = "red";
 
-  if (selectedTank === "E-327" && selectedPumps.includes("H-2")) {
+  if (selectedTank === "E-328" && selectedPumps.includes("H-2")) {
     color = "green";
     index = 20;
     valveColor = "green";
   }
   return (
     <div style={{ zIndex: index, position: "absolute" }}>
-      <Line length={30} top={292} left={1625} color={color} />
-      <Valve top={321} left={1620} title={"Б"} valveColor={valveColor} />
-      <Line length={15} top={351} left={1625} color={color} />
-      <Line isHorizontal length={200} top={359} left={1432} color={color} />
-      <Line length={420} top={359} left={1432} color={color} />
+        <Line length={19} top={593} left={1618} color={color} />
+
+<Valve top={612} left={1612} title={"Б"} valveColor={valveColor} />
+
+<Line length={44} top={642} left={1618} color={color} />
+
+<Line isHorizontal length={193} top={679} left={1432} color={color} />
+     <Line length={100} top={679} left={1432} color={color} />
+
       <Line isHorizontal length={100} top={773} left={1432} color={color} />
       <Valve toUp top={756} left={1532} title={"46"} valveColor={valveColor} />
       <Line isHorizontal length={350} top={773} left={1562} color={color} />
@@ -66,4 +70,4 @@ const T327toP2 = () => {
   );
 };
 
-export default T327toP2;
+export default T328toP2;

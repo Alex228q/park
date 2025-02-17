@@ -3,29 +3,27 @@ import Valve from "../Valve.jsx";
 import Arc from "../../Arc.jsx";
 import useStore from "../../../store/store.js";
 
-const T327toP3 = () => {
+const T329toP3 = () => {
   const { selectedTank, selectedPumps } = useStore();
   let color = "gray";
   let index = 1;
   let valveColor = "red";
-  if (selectedTank === "E-327" && selectedPumps.includes("H-3")) {
+  if (selectedTank === "E-329" && selectedPumps.includes("H-3")) {
     color = "green";
     index = 20;
     valveColor = "green";
   }
   return (
     <div style={{ zIndex: index, position: "absolute" }}>
-      <Line length={30} top={292} left={1625} color={color} />
-      <Valve top={321} left={1620} title={"Б"} valveColor={valveColor} />
-      <Line length={15} top={351} left={1625} color={color} />
-      <Line isHorizontal length={200} top={359} left={1432} color={color} />
-      <Line length={420} top={359} left={1432} color={color} />
-      <Line isHorizontal length={100} top={773} left={1432} color={color} />
-      <Valve toUp top={756} left={1532} title={"46"} valveColor={valveColor} />
-      <Line isHorizontal length={350} top={773} left={1562} color={color} />
-      <Line length={30} top={750} left={1905} color={color} />
-      <Valve top={721} left={1899} title={"47"} valveColor={valveColor} />
-      <Line length={30} top={691} left={1905} color={color} />
+      <Line length={30} top={292} left={2005} color={color} />
+      <Valve top={321} left={1999} title={"Б"} valveColor={valveColor} />
+      <Line length={15} top={351} left={2004} color={color} />
+      <Line isHorizontal length={200} top={359} left={1811} color={color} />
+
+      <Line length={333} top={359} left={1811} color={color} />
+
+      <Line isHorizontal length={102} top={691} left={1811} color={color} />
+
       <Line isHorizontal length={540} top={691} left={1905} color={color} />
       <Line length={540} top={691} left={2440} color={color} />
       <Line isHorizontal length={48} top={1225} left={2440} color={color} />
@@ -57,4 +55,4 @@ const T327toP3 = () => {
   );
 };
 
-export default T327toP3;
+export default T329toP3;

@@ -3,13 +3,16 @@ import Valve from "../Valve.jsx";
 import useStore from "../../../store/store.js";
 
 const Pump2to10 = () => {
-  const { selectedPumps, selectedReck } = useStore();
+  const { selectedPumps, selectedReck, selectedTank } = useStore();
+  const deepMazut = ["E-327", "E-328", "E-329", "E-330", "E-331"];
 
+  
   let color = "gray";
   let index = 1;
   let valveColor = "red";
 
-  if (selectedReck === "910-10 (2)" && selectedPumps.includes("H-2")) {
+  if (selectedReck === "910-10 (2)" && selectedPumps.includes("H-2")&&
+  !deepMazut.includes(selectedTank)) {
     color = "green";
     index = 20;
     valveColor = "green";

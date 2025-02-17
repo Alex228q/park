@@ -3,24 +3,27 @@ import Valve from "../Valve.jsx";
 import Arc from "../../Arc.jsx";
 import useStore from "../../../store/store.js";
 
-const T327toP2 = () => {
+const T328toP3 = () => {
   const { selectedTank, selectedPumps } = useStore();
   let color = "gray";
   let index = 1;
   let valveColor = "red";
-
-  if (selectedTank === "E-327" && selectedPumps.includes("H-2")) {
+  if (selectedTank === "E-328" && selectedPumps.includes("H-3")) {
     color = "green";
     index = 20;
     valveColor = "green";
   }
   return (
     <div style={{ zIndex: index, position: "absolute" }}>
-      <Line length={30} top={292} left={1625} color={color} />
-      <Valve top={321} left={1620} title={"Б"} valveColor={valveColor} />
-      <Line length={15} top={351} left={1625} color={color} />
-      <Line isHorizontal length={200} top={359} left={1432} color={color} />
-      <Line length={420} top={359} left={1432} color={color} />
+        <Line length={19} top={593} left={1618} color={color} />
+
+<Valve top={612} left={1612} title={"Б"} valveColor={valveColor} />
+
+<Line length={44} top={642} left={1618} color={color} />
+
+<Line isHorizontal length={193} top={679} left={1432} color={color} />
+     <Line length={100} top={679} left={1432} color={color} />
+
       <Line isHorizontal length={100} top={773} left={1432} color={color} />
       <Valve toUp top={756} left={1532} title={"46"} valveColor={valveColor} />
       <Line isHorizontal length={350} top={773} left={1562} color={color} />
@@ -46,24 +49,16 @@ const T327toP2 = () => {
 
       <Line isHorizontal length={25} top={1519} left={2532} color={color} />
 
-      <Line isHorizontal length={273} top={1384} left={2284} color={color} />
-      <Valve toUp top={1366} left={2254} title={"20"} valveColor={valveColor} />
+      <Line isHorizontal length={257} top={1384} left={2300} color={color} />
+      <Line length={88} top={1384} left={2300} color={color} />
 
-      <Line isHorizontal length={88} top={1384} left={2166} color={color} />
+      <Valve top={1472} left={2294} title={"36"} valveColor={valveColor} />
 
-      <Valve toUp top={1366} left={2137} title={"19"} valveColor={valveColor} />
+      <Line length={82} top={1502} left={2300} color={color} />
 
-      <Line isHorizontal length={80} top={1383} left={2057} color={color} />
-
-      <Line length={88} top={1383} left={2057} color={color} />
-
-      <Valve top={1470} left={2051} title={"38"} valveColor={valveColor} />
-
-      <Line length={82} top={1500} left={2057} color={color} />
-
-      <Line isHorizontal length={23} top={1582} left={2057} color={color} />
+      <Line isHorizontal length={20} top={1584} left={2300} color={color} />
     </div>
   );
 };
 
-export default T327toP2;
+export default T328toP3;

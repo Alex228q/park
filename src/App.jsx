@@ -24,11 +24,21 @@ import Pump3to10 from "./components/sigments/pumpPST/Pump3to10.jsx";
 import Pump4to10 from "./components/sigments/pumpPST/Pump4to10.jsx";
 import T327to35 from "./components/sigments/327/T327to35.jsx";
 import LockBlock34 from "./components/LockBlock34.jsx";
+import T328to35 from "./components/sigments/328/T328to35.jsx";
+import T329to35 from "./components/sigments/329/T329to35.jsx";
+import T330to35 from "./components/sigments/330/T330to35.jsx";
+import T331to35 from "./components/sigments/331/T331to35.jsx";
+import Pump1to10d from "./components/sigments/pumpDeep/Pump1to10d.jsx";
+import Pump2to10d from "./components/sigments/pumpDeep/Pump2to10d.jsx";
+import Pump3to10d from "./components/sigments/pumpDeep/Pump3to10d.jsx";
+import Pump4to10d from "./components/sigments/pumpDeep/Pump4to10d.jsx";
 
 const App = () => {
-  const { selectedTank, selectedReck, setSelectedPump } = useStore();
+  const deepMazut = ["E-327", "E-328", "E-329", "E-330", "E-331"];
   const leftDirectMazut = ["E-322", "E-323", "E-324", "E-325", "E-326"];
   const rightDirectMazut = ["E-332", "E-333", "E-334"];
+  const { selectedTank, selectedReck, setSelectedPump } = useStore();
+
   useEffect(() => {
     if (
       leftDirectMazut.includes(selectedTank) &&
@@ -59,6 +69,16 @@ const App = () => {
     ) {
       setSelectedPump("H-2");
       setSelectedPump("H-3");
+    }
+
+    if (deepMazut.includes(selectedTank) && selectedReck === "910-40 (1)") {
+      setSelectedPump("H-1");
+      setSelectedPump("H-4");
+    }
+
+    if (deepMazut.includes(selectedTank) && selectedReck === "910-10 (2)") {
+      setSelectedPump("H-1");
+      setSelectedPump("H-4");
     }
   }, [selectedTank, selectedReck, setSelectedPump]);
 
@@ -110,20 +130,31 @@ const App = () => {
         <T325to35 />
         <T326to35 />
         <T327to35 />
-
+        <T328to35 />
+        <T329to35 />
+        <T330to35 />
+        <T331to35 />
         <T332to35 />
         <T333to35 />
         <T334to35 />
 
         <PumpStation35 />
+
         <Pump1to40 />
         <Pump2to40 />
         <Pump3to40 />
         <Pump4to40 />
+
         <Pump1to10 />
         <Pump2to10 />
         <Pump3to10 />
         <Pump4to10 />
+
+        <Pump1to10d />
+        <Pump2to10d />
+        <Pump3to10d />
+        <Pump4to10d />
+
         <LoadingReck title="910-40 (1)" top={1900} left={3000} />
         <LoadingReck title="910-10 (2)" top={2200} left={3000} />
         <LockBlock34 />
@@ -136,7 +167,7 @@ const App = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-screen h-screen overflow-auto cursor-grab"
+      className="relative w-screen h-screen overflow-auto cursor-grab bg-midnight"
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
@@ -152,6 +183,10 @@ const App = () => {
       <T325to35 />
       <T326to35 />
       <T327to35 />
+      <T328to35 />
+      <T329to35 />
+      <T330to35 />
+      <T331to35 />
       <T332to35 />
       <T333to35 />
       <T334to35 />
@@ -161,10 +196,17 @@ const App = () => {
       <Pump2to40 />
       <Pump3to40 />
       <Pump4to40 />
+
       <Pump1to10 />
       <Pump2to10 />
       <Pump3to10 />
       <Pump4to10 />
+
+      <Pump1to10d />
+      <Pump2to10d />
+      <Pump3to10d />
+      <Pump4to10d />
+
       <LoadingReck title="910-40 (1)" top={1900} left={3000} />
       <LoadingReck title="910-10 (2)" top={2200} left={3000} />
       <LockBlock34 />
