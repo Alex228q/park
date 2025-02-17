@@ -115,7 +115,8 @@ const App = () => {
         <T328to35 />
         <T329to35 />
         <T330to35 />
-        <T331to35 />
+        {deepMazut.includes("E-331") ? <T331to35 /> : <T331pto35 />}
+
         <T332to35 />
         <T333to35 />
         <T334to35 />
