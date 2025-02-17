@@ -4,8 +4,8 @@ import useStore from "../../../store/store.js";
 import Arc from "../../Arc.jsx";
 
 const Pump4to10d = () => {
-  const { selectedPumps, selectedReck, selectedTank } = useStore();
-  const deepMazut = ["E-327", "E-328", "E-329", "E-330", "E-331"];
+  const { selectedPumps, selectedReck, selectedTank , deepMazut} = useStore();
+  
   let color = "gray";
   let index = 1;
   let valveColor = "red";

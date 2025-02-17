@@ -36,41 +36,19 @@ import Pump1to40d from "./components/sigments/pumpDeep/Pump1to40d.jsx";
 import Pump2to40d from "./components/sigments/pumpDeep/Pump2to40d.jsx";
 import Pump3to40d from "./components/sigments/pumpDeep/Pump3to40d.jsx";
 import Pump4to40d from "./components/sigments/pumpDeep/Pump4to40d.jsx";
+import T331pto35 from "./components/sigments/321p/T331pto35.jsx";
 
 const App = () => {
-  const deepMazut = ["E-327", "E-328", "E-329", "E-330", "E-331"];
-  const leftDirectMazut = ["E-322", "E-323", "E-324", "E-325", "E-326"];
-  const rightDirectMazut = ["E-332", "E-333", "E-334"];
-  const { selectedTank, selectedReck, setSelectedPump } = useStore();
+  const { selectedTank, selectedReck, setSelectedPump, deepMazut, pstMazut } =
+    useStore();
 
   useEffect(() => {
-    if (
-      leftDirectMazut.includes(selectedTank) &&
-      selectedReck === "910-40 (1)"
-    ) {
+    if (pstMazut.includes(selectedTank) && selectedReck === "910-40 (1)") {
       setSelectedPump("H-2");
       setSelectedPump("H-3");
     }
 
-    if (
-      leftDirectMazut.includes(selectedTank) &&
-      selectedReck === "910-10 (2)"
-    ) {
-      setSelectedPump("H-2");
-      setSelectedPump("H-3");
-    }
-
-    if (
-      rightDirectMazut.includes(selectedTank) &&
-      selectedReck === "910-40 (1)"
-    ) {
-      setSelectedPump("H-2");
-      setSelectedPump("H-3");
-    }
-    if (
-      rightDirectMazut.includes(selectedTank) &&
-      selectedReck === "910-10 (2)"
-    ) {
+    if (pstMazut.includes(selectedTank) && selectedReck === "910-10 (2)") {
       setSelectedPump("H-2");
       setSelectedPump("H-3");
     }
@@ -84,7 +62,7 @@ const App = () => {
       setSelectedPump("H-1");
       setSelectedPump("H-4");
     }
-  }, [selectedTank, selectedReck, setSelectedPump]);
+  }, [selectedTank, selectedReck, setSelectedPump, deepMazut, pstMazut]);
 
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -194,7 +172,7 @@ const App = () => {
       <T328to35 />
       <T329to35 />
       <T330to35 />
-      <T331to35 />
+      {deepMazut.includes("E-331") ? <T331to35 /> : <T331pto35 />}
       <T332to35 />
       <T333to35 />
       <T334to35 />
