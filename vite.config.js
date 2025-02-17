@@ -26,8 +26,8 @@ export default defineConfig({
             type: "image/png",
           },
           {
-            src: "./tank.svg",
-            sizes: "512x",
+            src: "./icon.png",
+            sizes: "512x512",
             type: "image/png",
           },
         ],

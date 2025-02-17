@@ -11,7 +11,7 @@ const Tank = ({ title, top = 0, left = 0 }) => {
     <div
       onClick={handleClick}
       className={`w-[150px] h-[150px] rounded-full border-4 flex items-center justify-center text-4xl absolute ${
-        selectedTank === title ? "bg-green-500" : "bg-white"
+        selectedTank === title ? "bg-blue-400" : "bg-white"
       }`}
       style={{ top: `${top}px`, left: `${left}px` }}
     >
