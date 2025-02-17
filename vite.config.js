@@ -12,8 +12,8 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon.ico", "robots.txt", "apple-touch-icon.png"],
       manifest: {
-        name: "My App",
-        short_name: "My App",
+        name: "Схема",
+        short_name: "Схема",
         description: "A Progressive Web App built with React and Vite",
         theme_color: "#ffffff",
         background_color: "#ffffff",
