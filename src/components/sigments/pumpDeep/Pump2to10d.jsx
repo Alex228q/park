@@ -28,9 +28,9 @@ const Pump2to10d = () => {
       <Line length={38} top={1645} left={2192} color={color} />
       <Line isHorizontal length={75} top={1677} left={2407} color={color} />
       <Valve toUp top={1660} left={2377} valveColor={valveColor} title={"24"} />
-      <Line isHorizontal length={47} top={1677} left={2330} color={color} />
-      <Valve toUp top={1660} left={2300} valveColor={valveColor} title={"22"} />
-      <Line isHorizontal length={108} top={1677} left={2192} color={color} />
+      <Line isHorizontal length={70} top={1677} left={2192} color={color} />
+      <Valve toUp top={1660} left={2262} valveColor={valveColor} title={"22"} />
+      <Line isHorizontal length={85} top={1677} left={2292} color={color} />
       <Line length={22} top={1677} left={2475} color={color} />
       <Valve top={1699} left={2469} valveColor={valveColor} title={"26"} />
       <Line length={43} top={1729} left={2475} color={color} />

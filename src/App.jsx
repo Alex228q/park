@@ -32,6 +32,10 @@ import Pump1to10d from "./components/sigments/pumpDeep/Pump1to10d.jsx";
 import Pump2to10d from "./components/sigments/pumpDeep/Pump2to10d.jsx";
 import Pump3to10d from "./components/sigments/pumpDeep/Pump3to10d.jsx";
 import Pump4to10d from "./components/sigments/pumpDeep/Pump4to10d.jsx";
+import Pump1to40d from "./components/sigments/pumpDeep/Pump1to40d.jsx";
+import Pump2to40d from "./components/sigments/pumpDeep/Pump2to40d.jsx";
+import Pump3to40d from "./components/sigments/pumpDeep/Pump3to40d.jsx";
+import Pump4to40d from "./components/sigments/pumpDeep/Pump4to40d.jsx";
 
 const App = () => {
   const deepMazut = ["E-327", "E-328", "E-329", "E-330", "E-331"];
@@ -155,6 +159,10 @@ const App = () => {
         <Pump3to10d />
         <Pump4to10d />
 
+        <Pump1to40d />
+        <Pump2to40d />
+        <Pump3to40d />
+        <Pump4to40d />
         <LoadingReck title="910-40 (1)" top={1900} left={3000} />
         <LoadingReck title="910-10 (2)" top={2200} left={3000} />
         <LockBlock34 />
@@ -207,6 +215,10 @@ const App = () => {
       <Pump3to10d />
       <Pump4to10d />
 
+      <Pump1to40d />
+      <Pump2to40d />
+      <Pump3to40d />
+      <Pump4to40d />
       <LoadingReck title="910-40 (1)" top={1900} left={3000} />
       <LoadingReck title="910-10 (2)" top={2200} left={3000} />
       <LockBlock34 />

@@ -26,9 +26,9 @@ const Pump3to40 = () => {
       <Line length={39} top={1645} left={2432} color={color} />
       <Line isHorizontal length={32} top={1677} left={2407} color={color} />
       <Valve toUp top={1660} left={2377} valveColor={valveColor} title={"24"} />
-      <Line isHorizontal length={47} top={1677} left={2330} color={color} />
-      <Valve toUp top={1660} left={2300} valveColor={valveColor} title={"22"} />
-      <Line isHorizontal length={108} top={1677} left={2192} color={color} />
+      <Line isHorizontal length={70} top={1677} left={2192} color={color} />
+      <Valve toUp top={1660} left={2262} valveColor={valveColor} title={"22"} />
+      <Line isHorizontal length={85} top={1677} left={2292} color={color} />
       <Line length={8} top={1677} left={2192} color={color} />
       <Valve top={1685} left={2187} valveColor={valveColor} title={"31"} />
       <Line length={69} top={1715} left={2192} color={color} />
