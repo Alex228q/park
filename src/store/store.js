@@ -34,9 +34,21 @@ const useStore = create((set) => ({
     }),
   selectedReck: null,
   setSelectedReck: (itemId) =>
-    set({
-      selectedPumps: [],
-      selectedReck: itemId,
+    set((state) => {
+      // Если выбранная эстакада уже равна itemId, снимаем выбор
+      if (state.selectedReck === itemId) {
+        return {
+          selectedReck: null,
+          selectedPumps: [], // Очищаем массив насосов при снятии выбора эстакады
+          selectedPumps115: [], // Очищаем массив насосов при снятии выбора эстакады
+        };
+      }
+      // Иначе выбираем новую эстакаду
+      return {
+        selectedReck: itemId,
+        selectedPumps: [],
+        selectedPumps115: [], // Очищаем массив насосов при смене эстакады
+      };
     }),
   selectedTank: null,
   // setSelectedTank: (itemId) => set({ selectedTank: itemId }),
@@ -46,7 +58,8 @@ const useStore = create((set) => ({
       selectedPumps: [], // Очищаем массив насосов при смене резервуара
     })),
   //-------------------
-  selectedPumps: [], // Массив для хранения выбранных насосов
+  selectedPumps: [],
+  selectedPumps115: [], // Массив для хранения выбранных насосов
   setSelectedPump: (itemId) =>
     set((state) => {
       //Если насос уже выбран, удаляем его
@@ -65,6 +78,28 @@ const useStore = create((set) => ({
 
       // Если в массиве меньше двух насосов, просто добавляем новый
       return { selectedPumps: [...state.selectedPumps, itemId] };
+    }),
+
+  setSelectedPump115: (itemId) =>
+    set((state) => {
+      //Если насос уже выбран, удаляем его
+      if (state.selectedPumps115.includes(itemId)) {
+        return {
+          selectedPumps115: state.selectedPumps115.filter(
+            (pump) => pump !== itemId
+          ),
+        };
+      }
+
+      //Если в массиве уже два насоса, заменяем последний
+      if (state.selectedPumps115.length === 3) {
+        const updatedPumps = [...state.selectedPumps115];
+        updatedPumps[1] = itemId; // Заменяем последний насос
+        return { selectedPumps115: updatedPumps };
+      }
+
+      // Если в массиве меньше двух насосов, просто добавляем новый
+      return { selectedPumps115: [...state.selectedPumps115, itemId] };
     }),
 }));
 

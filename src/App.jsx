@@ -37,10 +37,19 @@ import Pump2to40d from "./components/sigments/pumpDeep/Pump2to40d.jsx";
 import Pump3to40d from "./components/sigments/pumpDeep/Pump3to40d.jsx";
 import Pump4to40d from "./components/sigments/pumpDeep/Pump4to40d.jsx";
 import T331pto35 from "./components/sigments/321p/T331pto35.jsx";
+import PumpStation115 from "./components/PumpStation115.jsx";
+import T327to115 from "./components/sigments/327to115/T327to115.jsx";
+import Pump1to100 from "./components/sigments/pumpto100/Pump1to100.jsx";
 
 const App = () => {
-  const { selectedTank, selectedReck, setSelectedPump, deepMazut, pstMazut } =
-    useStore();
+  const {
+    selectedTank,
+    selectedReck,
+    setSelectedPump,
+    setSelectedPump115,
+    deepMazut,
+    pstMazut,
+  } = useStore();
 
   useEffect(() => {
     if (pstMazut.includes(selectedTank) && selectedReck === "910-40 (1)") {
@@ -61,6 +70,9 @@ const App = () => {
     if (deepMazut.includes(selectedTank) && selectedReck === "910-10 (2)") {
       setSelectedPump("H-1");
       setSelectedPump("H-4");
+    }
+    if (deepMazut.includes(selectedTank) && selectedReck === "910-100 (3)") {
+      // setSelectedPump115("H-1");
     }
   }, [selectedTank, selectedReck, setSelectedPump, deepMazut, pstMazut]);
 
@@ -142,8 +154,14 @@ const App = () => {
         <Pump2to40d />
         <Pump3to40d />
         <Pump4to40d />
+        <PumpStation115 />
+        <T327to115 />
+
+        <Pump1to100 />
         <LoadingReck title="910-40 (1)" top={1900} left={3000} />
         <LoadingReck title="910-10 (2)" top={2200} left={3000} />
+        <LoadingReck title="910-100 (3)" top={2200} left={200} />
+
         <LockBlock34 />
 
         <Blank top={1840} left={3680} />
@@ -154,7 +172,7 @@ const App = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-screen h-screen overflow-auto cursor-grab bg-midnight"
+      className="relative w-screen h-screen overflow-auto cursor-grab"
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
@@ -198,8 +216,14 @@ const App = () => {
       <Pump2to40d />
       <Pump3to40d />
       <Pump4to40d />
+      <PumpStation115 />
+      <T327to115 />
+
+      <Pump1to100 />
+
       <LoadingReck title="910-40 (1)" top={1900} left={3000} />
       <LoadingReck title="910-10 (2)" top={2200} left={3000} />
+      <LoadingReck title="910-100 (3)" top={2200} left={200} />
       <LockBlock34 />
       <Blank top={2540} left={3780} />
     </div>

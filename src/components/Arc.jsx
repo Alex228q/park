@@ -1,17 +1,5 @@
 const Arc = ({ top = 0, left = 0, color = "gray" }) => {
   return (
-    // <div
-    //   style={{
-    //     position: "absolute",
-    //     top: `${top}px`,
-    //     left: `${left}px`,
-    //     width: "7px",
-    //     height: "35px",
-    //     backgroundColor: color,
-    //     rotate: "140deg",
-    //     borderRadius: "3px",
-    //   }}
-    // ></div>
     <div style={{ position: "absolute", top: `${top}px`, left: `${left}px` }}>
       <div
         style={{
