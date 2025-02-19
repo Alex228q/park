@@ -52,8 +52,8 @@ const App = () => {
   } = useStore();
 
   useEffect(() => {
-    const widthCenter = document.documentElement.clientWidth / 2;
-    const heightCenter = document.documentElement.clientHeight / 2;
+    const widthCenter = document.documentElement.scrollWidth / 2;
+    const heightCenter = document.documentElement.scrollHeight / 2;
     window.scrollTo({
       top: heightCenter,
       left: widthCenter,
