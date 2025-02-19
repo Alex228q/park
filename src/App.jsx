@@ -52,6 +52,16 @@ const App = () => {
   } = useStore();
 
   useEffect(() => {
+    const widthCenter = document.documentElement.clientWidth / 2;
+    const heightCenter = document.documentElement.clientHeight / 2;
+    window.scrollTo({
+      top: heightCenter,
+      left: widthCenter,
+      behavior: "smooth",
+    });
+  }, []);
+
+  useEffect(() => {
     if (pstMazut.includes(selectedTank) && selectedReck === "910-40 (1)") {
       setSelectedPump("H-2");
       setSelectedPump("H-3");
