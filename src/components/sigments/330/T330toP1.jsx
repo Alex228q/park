@@ -18,14 +18,12 @@ const T330toP1 = () => {
   return (
     <div style={{ zIndex: index, position: "absolute" }}>
       <Line length={17} top={594} left={2000} color={color} />
-
       <Valve top={610} left={1994} title={"Б"} valveColor={valveColor} />
-
       <Line length={23} top={640} left={2000} color={color} />
-
       <Line isHorizontal length={196} top={658} left={1811} color={color} />
-
       <Line length={40} top={658} left={1811} color={color} />
+
+      
       <Line isHorizontal length={102} top={691} left={1811} color={color} />
       <Line isHorizontal length={540} top={691} left={1905} color={color} />
       <Line length={300} top={691} left={2440} color={color} />

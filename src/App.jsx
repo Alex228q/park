@@ -36,10 +36,21 @@ import Pump1to40d from "./components/sigments/pumpDeep/Pump1to40d.jsx";
 import Pump2to40d from "./components/sigments/pumpDeep/Pump2to40d.jsx";
 import Pump3to40d from "./components/sigments/pumpDeep/Pump3to40d.jsx";
 import Pump4to40d from "./components/sigments/pumpDeep/Pump4to40d.jsx";
-import T331pto35 from "./components/sigments/321p/T331pto35.jsx";
+
 import PumpStation115 from "./components/PumpStation115.jsx";
 import T327to115 from "./components/sigments/327to115/T327to115.jsx";
 import Pump1to100 from "./components/sigments/pumpto100/Pump1to100.jsx";
+import Pump2to100 from "./components/sigments/pumpto100/Pump2to100.jsx";
+import Pump3to100 from "./components/sigments/pumpto100/Pump3to100.jsx";
+import Pump4to100 from "./components/sigments/pumpto100/Pump4to100.jsx";
+import Pump5to100 from "./components/sigments/pumpto100/Pump5to100.jsx";
+import T328to115P2 from "./components/sigments/328to115/T328to115P2.jsx";
+import T328to115P3 from "./components/sigments/328to115/T328to115P3.jsx";
+import T328to115 from "./components/sigments/328to115/T328to115.jsx";
+import T329to115 from "./components/sigments/329to115/T329to115.jsx";
+import T330to115 from "./components/sigments/330to115/T330to115.jsx";
+import T331to115 from "./components/sigments/331to115/T331to115.jsx";
+import T331pto35 from "./components/sigments/331p/T331pto35.jsx";
 
 const App = () => {
   const {
@@ -72,7 +83,9 @@ const App = () => {
       setSelectedPump("H-4");
     }
     if (deepMazut.includes(selectedTank) && selectedReck === "910-100 (3)") {
-      // setSelectedPump115("H-1");
+      setSelectedPump115("H-1");
+      setSelectedPump115("H-3");
+      setSelectedPump115("H-5");
     }
   }, [selectedTank, selectedReck, setSelectedPump, deepMazut, pstMazut]);
 
@@ -156,8 +169,17 @@ const App = () => {
         <Pump4to40d />
         <PumpStation115 />
         <T327to115 />
+        <T328to115 />
+        <T329to115 />
+        <T330to115 />
+        <T331to115 />
 
         <Pump1to100 />
+        <Pump2to100 />
+        <Pump3to100 />
+        <Pump4to100 />
+        <Pump5to100 />
+
         <LoadingReck title="910-40 (1)" top={1900} left={3000} />
         <LoadingReck title="910-10 (2)" top={2200} left={3000} />
         <LoadingReck title="910-100 (3)" top={2200} left={200} />
@@ -218,8 +240,16 @@ const App = () => {
       <Pump4to40d />
       <PumpStation115 />
       <T327to115 />
+      <T328to115 />
+      <T329to115 />
+      <T330to115 />
+      <T331to115 />
 
       <Pump1to100 />
+      <Pump2to100 />
+      <Pump3to100 />
+      <Pump4to100 />
+      <Pump5to100 />
 
       <LoadingReck title="910-40 (1)" top={1900} left={3000} />
       <LoadingReck title="910-10 (2)" top={2200} left={3000} />

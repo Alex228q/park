@@ -1,6 +1,6 @@
 import Line from "../Line.jsx";
 import Valve from "../Valve.jsx";
-import Arc from "../../Arc.jsx";
+
 import useStore from "../../../store/store.js";
 
 const T331ptoP2 = () => {

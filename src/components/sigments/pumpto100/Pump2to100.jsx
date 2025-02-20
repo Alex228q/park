@@ -2,7 +2,7 @@ import Line from "../Line.jsx";
 import Valve from "../Valve.jsx";
 import useStore from "../../../store/store.js";
 
-const Pump1to100 = () => {
+const Pump2to100 = () => {
   const { selectedPumps115, selectedReck, selectedTank, deepMazut } =
     useStore();
 
@@ -12,7 +12,7 @@ const Pump1to100 = () => {
 
   if (
     selectedReck === "910-100 (3)" &&
-    selectedPumps115.includes("H-1") &&
+    selectedPumps115.includes("H-2") &&
     deepMazut.includes(selectedTank)
   ) {
     color = "green";
@@ -22,17 +22,11 @@ const Pump1to100 = () => {
 
   return (
     <div style={{ zIndex: index, position: "absolute" }}>
-      <Line isHorizontal length={19} top={1591} left={499} color={color} />
-      <Line length={160} top={1591} left={511} color={color} />
-      <Valve
-        title={"ЗМ-15"}
-        top={1750}
-        left={506}
-        valveColor={valveColor}
-        gapValve="15px"
-      />
-      <Line length={40} top={1779} left={511} color={color} />
-      <Line isHorizontal length={307} top={1812} left={211} color={color} />
+      <Line isHorizontal length={19} top={1591} left={699} color={color} />
+      <Line length={160} top={1591} left={711} color={color} />
+      <Valve title={"ЗМ-21"} top={1750} left={706} valveColor={valveColor}  gapValve="15px"/>
+      <Line length={40} top={1779} left={711} color={color} />
+      <Line isHorizontal length={507} top={1812} left={211} color={color} />
       <Line length={200} top={1812} left={211} color={color} />
 
       <Valve title={"89"} top={2010} left={206} valveColor={valveColor} />
@@ -42,4 +36,4 @@ const Pump1to100 = () => {
   );
 };
 
-export default Pump1to100;
+export default Pump2to100;
