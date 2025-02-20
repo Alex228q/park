@@ -10,7 +10,12 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["favicon.ico", "robots.txt", "apple-touch-icon.png"],
+      includeAssets: [
+        "favicon.ico",
+        "robots.txt",
+        "apple-touch-icon.png",
+        "valve.png",
+      ],
       manifest: {
         name: "Схема",
         short_name: "Схема",
