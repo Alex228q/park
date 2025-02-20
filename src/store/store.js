@@ -51,13 +51,14 @@ const useStore = create((set) => ({
       };
     }),
   selectedTank: null,
-  // setSelectedTank: (itemId) => set({ selectedTank: itemId }),
+
   setSelectedTank: (itemId) =>
     set(() => ({
       selectedTank: itemId,
-      selectedPumps: [], // Очищаем массив насосов при смене резервуара
+      selectedPumps: [],
+      selectedPumps115: [],
     })),
-  //-------------------
+
   selectedPumps: [],
   selectedPumps115: [], // Массив для хранения выбранных насосов
   setSelectedPump: (itemId) =>

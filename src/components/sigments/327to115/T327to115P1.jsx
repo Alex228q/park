@@ -2,7 +2,7 @@ import Line from "../Line.jsx";
 import Valve from "../Valve.jsx";
 
 import useStore from "../../../store/store.js";
-import ArcHorizontal from "../../ArcHorizontal.jsx";
+
 import Arc from "../../Arc.jsx";
 
 const T327to115P1 = () => {

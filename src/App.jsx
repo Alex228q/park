@@ -87,7 +87,14 @@ const App = () => {
       setSelectedPump115("H-3");
       setSelectedPump115("H-5");
     }
-  }, [selectedTank, selectedReck, setSelectedPump, deepMazut, pstMazut]);
+  }, [
+    selectedTank,
+    selectedReck,
+    setSelectedPump,
+    setSelectedPump115,
+    deepMazut,
+    pstMazut,
+  ]);
 
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
