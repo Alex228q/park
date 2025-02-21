@@ -22,10 +22,10 @@ const T327toP4 = () => {
       <Line isHorizontal length={200} top={359} left={1432} color={color} />
       <Line length={420} top={359} left={1432} color={color} />
       <Line isHorizontal length={100} top={773} left={1432} color={color} />
-      <Valve toUp top={756} left={1532} title={"46"} valveColor={valveColor} />
+      <Valve toUp top={756} left={1532} title={"ЗМ-46"} valveColor={valveColor} />
       <Line isHorizontal length={350} top={773} left={1562} color={color} />
       <Line length={30} top={750} left={1905} color={color} />
-      <Valve top={721} left={1899} title={"47"} valveColor={valveColor} />
+      <Valve top={721} left={1899} title={"ЗМ-47"} valveColor={valveColor}  gapValve="12px"/>
       <Line length={30} top={691} left={1905} color={color} />
       <Line isHorizontal length={540} top={691} left={1905} color={color} />
       <Line length={540} top={691} left={2440} color={color} />

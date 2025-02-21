@@ -24,7 +24,7 @@ const T330to115P5 = () => {
       <Line isHorizontal length={101} top={691} left={1811} color={color} />
       <Line isHorizontal length={331} top={773} left={1581} color={color} />
       <Line length={30} top={750} left={1905} color={color} />
-      <Valve top={721} left={1899} title={"47"} valveColor={valveColor} />
+      <Valve top={721} left={1899} title={"ЗМ-47"} valveColor={valveColor}  gapValve="12px"/>
       <Line length={30} top={691} left={1905} color={color} />
       <Line length={205} top={773} left={1581} color={color} />
       <Arc top={972} left={1595} color={color} />
@@ -38,7 +38,7 @@ const T330to115P5 = () => {
         left={1159}
         title={"ЗМ-36"}
         valveColor={valveColor}
-        gapValve="17px"
+        gapValve="12px"
       />
       <Line length={230} top={1359} left={1165} color={color} />
       <Line isHorizontal length={37} top={1589} left={1165} color={color} />

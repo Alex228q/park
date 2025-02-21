@@ -30,9 +30,15 @@ const T331ptoP3 = () => {
       <Line length={155} top={643} left={2506} color={color} />
       <Line isHorizontal length={60} top={791} left={2506} color={color} />
       <Line length={85} top={791} left={2559} color={color} />
-      <Line isHorizontal length={15} top={876} left={2559} color={color} />
-      <Valve toUp top={859} left={2574} title={"49"} valveColor={valveColor} />
-      <Line isHorizontal length={52} top={877} left={2604} color={color} />
+      <Line isHorizontal length={20} top={876} left={2559} color={color} />
+      <Valve
+        toUp
+        top={859}
+        left={2579}
+        title={"ЗМ-49"}
+        valveColor={valveColor}
+      />
+      <Line isHorizontal length={47} top={877} left={2609} color={color} />
 
       <Line length={400} top={877} left={2649} color={color} />
       <Valve

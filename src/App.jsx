@@ -51,6 +51,7 @@ import T329to115 from "./components/sigments/329to115/T329to115.jsx";
 import T330to115 from "./components/sigments/330to115/T330to115.jsx";
 import T331to115 from "./components/sigments/331to115/T331to115.jsx";
 import T331pto35 from "./components/sigments/331p/T331pto35.jsx";
+import T322to115 from "./components/sigments/322to115/T322to115.jsx";
 
 const App = () => {
   const {
@@ -83,6 +84,12 @@ const App = () => {
       setSelectedPump("H-4");
     }
     if (deepMazut.includes(selectedTank) && selectedReck === "910-100 (3)") {
+      setSelectedPump115("H-1");
+      setSelectedPump115("H-3");
+      setSelectedPump115("H-5");
+    }
+
+    if (pstMazut.includes(selectedTank) && selectedReck === "910-100 (3)") {
       setSelectedPump115("H-1");
       setSelectedPump115("H-3");
       setSelectedPump115("H-5");
@@ -175,6 +182,8 @@ const App = () => {
         <Pump3to40d />
         <Pump4to40d />
         <PumpStation115 />
+        <T322to115 />
+
         <T327to115 />
         <T328to115 />
         <T329to115 />
@@ -246,6 +255,8 @@ const App = () => {
       <Pump3to40d />
       <Pump4to40d />
       <PumpStation115 />
+      <T322to115 />
+
       <T327to115 />
       <T328to115 />
       <T329to115 />

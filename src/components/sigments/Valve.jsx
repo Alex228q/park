@@ -20,7 +20,7 @@ const Valve = ({
     >
       <img src="./valve.png" alt="valve" />
 
-      <div className="text-xl font-semibold" style={{ transform: titleRotate }}>
+      <div className="text-lg font-semibold" style={{ transform: titleRotate }}>
         {title}
       </div>
 

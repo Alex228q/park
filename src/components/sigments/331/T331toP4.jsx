@@ -31,7 +31,7 @@ const T331toP4 = () => {
       <Line length={155} top={643} left={2506} color={color} />
 
       <Line isHorizontal length={20} top={791} left={2493} color={color} />
-      <Valve toUp top={774} left={2463} title={"48"} valveColor={valveColor} />
+      <Valve toUp top={774} left={2463} title={"ЗМ-48"} valveColor={valveColor} />
       <Line isHorizontal length={24} top={791} left={2440} color={color} />
       <Line length={440} top={791} left={2440} color={color} />
 

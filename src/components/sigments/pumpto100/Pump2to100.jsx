@@ -24,7 +24,7 @@ const Pump2to100 = () => {
     <div style={{ zIndex: index, position: "absolute" }}>
       <Line isHorizontal length={19} top={1591} left={699} color={color} />
       <Line length={160} top={1591} left={711} color={color} />
-      <Valve title={"ЗМ-21"} top={1750} left={706} valveColor={valveColor}  gapValve="15px"/>
+      <Valve title={"ЗМ-21"} top={1750} left={706} valveColor={valveColor}  gapValve="12px"/>
       <Line length={40} top={1779} left={711} color={color} />
       <Line isHorizontal length={507} top={1812} left={211} color={color} />
       <Line length={200} top={1812} left={211} color={color} />

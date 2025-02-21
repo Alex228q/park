@@ -29,7 +29,7 @@ const Pump5to100 = () => {
         top={1750}
         left={1306}
         valveColor={valveColor}
-        gapValve="15px"
+        gapValve="12px"
       />
       <Line length={40} top={1779} left={1311} color={color} />
       <Line isHorizontal length={1107} top={1812} left={211} color={color} />
