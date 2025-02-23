@@ -52,6 +52,14 @@ import T330to115 from "./components/sigments/330to115/T330to115.jsx";
 import T331to115 from "./components/sigments/331to115/T331to115.jsx";
 import T331pto35 from "./components/sigments/331p/T331pto35.jsx";
 import T322to115 from "./components/sigments/322to115/T322to115.jsx";
+import T323to115P1 from "./components/sigments/323to115/T323to115P1.jsx";
+import T323to115 from "./components/sigments/323to115/T323to115.jsx";
+import PlainText from "./components/PlainText.jsx";
+import Pump1to100p from "./components/sigments/pumpto100p/Pump1to100p.jsx";
+import Pump2to100p from "./components/sigments/pumpto100p/Pump2to100p.jsx";
+import Pump3to100p from "./components/sigments/pumpto100p/Pump3to100p.jsx";
+import Pump4to100p from "./components/sigments/pumpto100p/Pump4to100p.jsx";
+import Pump5to100p from "./components/sigments/pumpto100p/Pump5to100p.jsx";
 
 const App = () => {
   const {
@@ -143,6 +151,8 @@ const App = () => {
   if (isMobile) {
     return (
       <div ref={containerRef} className="relative">
+        <PlainText text="M-100 (ЗГПН) ->" top={1268} left={197} />
+        <PlainText text="Ф-5 (ПСТ) ->" top={1238} left={229} />
         <TopTanks />
         <BottomTanks />
         <T322to35 />
@@ -183,6 +193,7 @@ const App = () => {
         <Pump4to40d />
         <PumpStation115 />
         <T322to115 />
+        <T323to115 />
 
         <T327to115 />
         <T328to115 />
@@ -195,6 +206,12 @@ const App = () => {
         <Pump3to100 />
         <Pump4to100 />
         <Pump5to100 />
+
+        <Pump1to100p />
+        <Pump2to100p />
+        <Pump3to100p />
+        <Pump4to100p />
+        <Pump5to100p />
 
         <LoadingReck title="910-40 (1)" top={1900} left={3000} />
         <LoadingReck title="910-10 (2)" top={2200} left={3000} />
@@ -217,6 +234,8 @@ const App = () => {
       onMouseLeave={handleMouseUp}
       style={{ cursor: isDragging ? "grabbing" : "grab" }}
     >
+      <PlainText text="M-100 (ЗГПН) ->" top={1268} left={197} />
+      <PlainText text="Ф-5 (ПСТ) ->" top={1238} left={229} />
       <FullScreenButton />
       <TopTanks />
       <BottomTanks />
@@ -256,6 +275,7 @@ const App = () => {
       <Pump4to40d />
       <PumpStation115 />
       <T322to115 />
+      <T323to115 />
 
       <T327to115 />
       <T328to115 />
@@ -268,6 +288,12 @@ const App = () => {
       <Pump3to100 />
       <Pump4to100 />
       <Pump5to100 />
+
+      <Pump1to100p />
+      <Pump2to100p />
+      <Pump3to100p />
+      <Pump4to100p />
+      <Pump5to100p />
 
       <LoadingReck title="910-40 (1)" top={1900} left={3000} />
       <LoadingReck title="910-10 (2)" top={2200} left={3000} />
