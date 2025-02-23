@@ -44,15 +44,14 @@ import Pump2to100 from "./components/sigments/pumpto100/Pump2to100.jsx";
 import Pump3to100 from "./components/sigments/pumpto100/Pump3to100.jsx";
 import Pump4to100 from "./components/sigments/pumpto100/Pump4to100.jsx";
 import Pump5to100 from "./components/sigments/pumpto100/Pump5to100.jsx";
-import T328to115P2 from "./components/sigments/328to115/T328to115P2.jsx";
-import T328to115P3 from "./components/sigments/328to115/T328to115P3.jsx";
+
 import T328to115 from "./components/sigments/328to115/T328to115.jsx";
 import T329to115 from "./components/sigments/329to115/T329to115.jsx";
 import T330to115 from "./components/sigments/330to115/T330to115.jsx";
 import T331to115 from "./components/sigments/331to115/T331to115.jsx";
 import T331pto35 from "./components/sigments/331p/T331pto35.jsx";
 import T322to115 from "./components/sigments/322to115/T322to115.jsx";
-import T323to115P1 from "./components/sigments/323to115/T323to115P1.jsx";
+
 import T323to115 from "./components/sigments/323to115/T323to115.jsx";
 import PlainText from "./components/PlainText.jsx";
 import Pump1to100p from "./components/sigments/pumpto100p/Pump1to100p.jsx";
@@ -60,6 +59,14 @@ import Pump2to100p from "./components/sigments/pumpto100p/Pump2to100p.jsx";
 import Pump3to100p from "./components/sigments/pumpto100p/Pump3to100p.jsx";
 import Pump4to100p from "./components/sigments/pumpto100p/Pump4to100p.jsx";
 import Pump5to100p from "./components/sigments/pumpto100p/Pump5to100p.jsx";
+import T324to115 from "./components/sigments/324to115/T324to115.jsx";
+import T325to115 from "./components/sigments/325to115/T325to115.jsx";
+import T326to115 from "./components/sigments/326to115/T326to115.jsx";
+import T332to115 from "./components/sigments/332to115/T332to115.jsx";
+import T333to115 from "./components/sigments/333to115/T333to115.jsx";
+import T334to115 from "./components/sigments/334to115/T334to115.jsx";
+
+import T331to115p from "./components/sigments/331to115p/T331to115p.jsx";
 
 const App = () => {
   const {
@@ -194,12 +201,18 @@ const App = () => {
         <PumpStation115 />
         <T322to115 />
         <T323to115 />
+        <T324to115 />
+        <T325to115 />
+        <T326to115 />
+        <T332to115 />
+        <T333to115 />
+        <T334to115 />
 
         <T327to115 />
         <T328to115 />
         <T329to115 />
         <T330to115 />
-        <T331to115 />
+        {deepMazut.includes("E-331") ? <T331to115 /> : <T331to115p />}
 
         <Pump1to100 />
         <Pump2to100 />
@@ -276,12 +289,18 @@ const App = () => {
       <PumpStation115 />
       <T322to115 />
       <T323to115 />
+      <T324to115 />
+      <T325to115 />
+      <T326to115 />
+      <T332to115 />
+      <T333to115 />
+      <T334to115 />
 
       <T327to115 />
       <T328to115 />
       <T329to115 />
       <T330to115 />
-      <T331to115 />
+      {deepMazut.includes("E-331") ? <T331to115 /> : <T331to115p />}
 
       <Pump1to100 />
       <Pump2to100 />
