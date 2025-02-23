@@ -232,7 +232,7 @@ const App = () => {
 
         <LockBlock34 />
 
-        <Blank top={1840} left={3680} />
+        <Blank top={2240} left={3480} />
       </div>
     );
   }
@@ -245,7 +245,9 @@ const App = () => {
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
-      style={{ cursor: isDragging ? "grabbing" : "grab" }}
+      style={{
+        cursor: isDragging ? "grabbing" : "grab",
+      }}
     >
       <PlainText text="M-100 (ЗГПН) ->" top={1268} left={197} />
       <PlainText text="Ф-5 (ПСТ) ->" top={1238} left={229} />
@@ -318,7 +320,7 @@ const App = () => {
       <LoadingReck title="910-10 (2)" top={2200} left={3000} />
       <LoadingReck title="910-100 (3)" top={2200} left={200} />
       <LockBlock34 />
-      <Blank top={2540} left={3780} />
+      <Blank top={2240} left={3480} />
     </div>
   );
 };
