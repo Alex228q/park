@@ -3,6 +3,7 @@ const PlainText = ({ top = 0, left = 0, text = "" }) => {
     <div
       className="absolute text-lg font-medium"
       style={{
+        width:"150px",
         left,
         top,
       }}

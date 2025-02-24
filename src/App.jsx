@@ -67,6 +67,8 @@ import T333to115 from "./components/sigments/333to115/T333to115.jsx";
 import T334to115 from "./components/sigments/334to115/T334to115.jsx";
 
 import T331to115p from "./components/sigments/331to115p/T331to115p.jsx";
+import FromPstToTank from "./components/FromPstToTank.jsx";
+import SwapButton from "./components/SwapButton.jsx";
 
 const App = () => {
   const {
@@ -76,6 +78,7 @@ const App = () => {
     setSelectedPump115,
     deepMazut,
     pstMazut,
+    isSwap,
   } = useStore();
 
   useEffect(() => {
@@ -120,6 +123,7 @@ const App = () => {
 
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
+
   const [startY, setStartY] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [scrollTop, setScrollTop] = useState(0);
@@ -158,6 +162,15 @@ const App = () => {
   if (isMobile) {
     return (
       <div ref={containerRef} className="relative">
+        {!isSwap || (
+          <>
+            <PlainText text="МАЗУТ С ПСТ-2" top={2} left={2570} />
+            <FromPstToTank />
+          </>
+        )}
+
+        <SwapButton top={20} left={20} isSwap={isSwap} />
+
         <PlainText text="M-100 (ЗГПН) ->" top={1268} left={197} />
         <PlainText text="Ф-5 (ПСТ) ->" top={1238} left={229} />
         <TopTanks />
@@ -226,9 +239,13 @@ const App = () => {
         <Pump4to100p />
         <Pump5to100p />
 
-        <LoadingReck title="910-40 (1)" top={1900} left={3000} />
-        <LoadingReck title="910-10 (2)" top={2200} left={3000} />
-        <LoadingReck title="910-100 (3)" top={2200} left={200} />
+        {isSwap || (
+          <>
+            <LoadingReck title="910-40 (1)" top={1900} left={3000} />
+            <LoadingReck title="910-10 (2)" top={2200} left={3000} />
+            <LoadingReck title="910-100 (3)" top={2200} left={200} />
+          </>
+        )}
 
         <LockBlock34 />
 
@@ -249,6 +266,14 @@ const App = () => {
         cursor: isDragging ? "grabbing" : "grab",
       }}
     >
+      {!isSwap || (
+        <>
+          <PlainText text="МАЗУТ С ПСТ-2" top={2} left={2570} />
+          <FromPstToTank />
+        </>
+      )}
+
+      <SwapButton top={20} left={20} isSwap={isSwap} />
       <PlainText text="M-100 (ЗГПН) ->" top={1268} left={197} />
       <PlainText text="Ф-5 (ПСТ) ->" top={1238} left={229} />
       <FullScreenButton />
@@ -267,23 +292,19 @@ const App = () => {
       <T332to35 />
       <T333to35 />
       <T334to35 />
-
       <PumpStation35 />
       <Pump1to40 />
       <Pump2to40 />
       <Pump3to40 />
       <Pump4to40 />
-
       <Pump1to10 />
       <Pump2to10 />
       <Pump3to10 />
       <Pump4to10 />
-
       <Pump1to10d />
       <Pump2to10d />
       <Pump3to10d />
       <Pump4to10d />
-
       <Pump1to40d />
       <Pump2to40d />
       <Pump3to40d />
@@ -297,28 +318,29 @@ const App = () => {
       <T332to115 />
       <T333to115 />
       <T334to115 />
-
       <T327to115 />
       <T328to115 />
       <T329to115 />
       <T330to115 />
       {deepMazut.includes("E-331") ? <T331to115 /> : <T331to115p />}
-
       <Pump1to100 />
       <Pump2to100 />
       <Pump3to100 />
       <Pump4to100 />
       <Pump5to100 />
-
       <Pump1to100p />
       <Pump2to100p />
       <Pump3to100p />
       <Pump4to100p />
       <Pump5to100p />
+      {isSwap || (
+        <>
+          <LoadingReck title="910-40 (1)" top={1900} left={3000} />
+          <LoadingReck title="910-10 (2)" top={2200} left={3000} />
+          <LoadingReck title="910-100 (3)" top={2200} left={200} />
+        </>
+      )}
 
-      <LoadingReck title="910-40 (1)" top={1900} left={3000} />
-      <LoadingReck title="910-10 (2)" top={2200} left={3000} />
-      <LoadingReck title="910-100 (3)" top={2200} left={200} />
       <LockBlock34 />
       <Blank top={2240} left={3480} />
     </div>

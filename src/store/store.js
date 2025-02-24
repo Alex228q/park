@@ -1,6 +1,26 @@
 import { create } from "zustand";
 
 const useStore = create((set) => ({
+  isSwap: false,
+  toggleSwap: () =>
+    set((state) => ({
+      isSwap: !state.isSwap, // Переключаем isSwap
+      deepMazut: ["E-327", "E-328", "E-329", "E-330", "E-331"], // Сбрасываем deepMazut
+      pstMazut: [
+        "E-322",
+        "E-323",
+        "E-324",
+        "E-325",
+        "E-326",
+        "E-332",
+        "E-333",
+        "E-334",
+      ], // Сбрасываем pstMazut
+      selectedReck: null, // Сбрасываем selectedReck
+      selectedTank: null, // Сбрасываем selectedTank
+      selectedPumps: [], // Сбрасываем selectedPumps
+      selectedPumps115: [], // Сбрасываем selectedPumps115
+    })),
   deepMazut: ["E-327", "E-328", "E-329", "E-330", "E-331"],
   pstMazut: [
     "E-322",
