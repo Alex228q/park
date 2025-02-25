@@ -69,6 +69,7 @@ import T334to115 from "./components/sigments/334to115/T334to115.jsx";
 import T331to115p from "./components/sigments/331to115p/T331to115p.jsx";
 import FromPstToTank from "./components/FromPstToTank.jsx";
 import SwapButton from "./components/SwapButton.jsx";
+import FromZgpnToTank from "./components/FromZgpnToTank.jsx";
 
 const App = () => {
   const {
@@ -165,7 +166,10 @@ const App = () => {
         {!isSwap || (
           <>
             <PlainText text="МАЗУТ С ПСТ-2" top={2} left={2570} />
+            <PlainText text="МАЗУТ С ЗГПН" top={2} left={1854} />
+
             <FromPstToTank />
+            <FromZgpnToTank />
           </>
         )}
 
@@ -269,7 +273,9 @@ const App = () => {
       {!isSwap || (
         <>
           <PlainText text="МАЗУТ С ПСТ-2" top={2} left={2570} />
+          <PlainText text="МАЗУТ С ЗГПН" top={2} left={1854} />
           <FromPstToTank />
+          <FromZgpnToTank />
         </>
       )}
 

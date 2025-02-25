@@ -1,8 +1,13 @@
 import useStore from "../store/store.js";
 
 const Tank = ({ title, top = 0, left = 0 }) => {
-  const { selectedTank, setSelectedTank, deepMazut, moveTankBetweenLists } =
-    useStore();
+  const {
+    selectedTank,
+    setSelectedTank,
+    deepMazut,
+    moveTankBetweenLists,
+    isSwap,
+  } = useStore();
 
   const handleClick = () => {
     setSelectedTank(title);

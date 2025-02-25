@@ -3,7 +3,7 @@ const Valve = ({
   left = 0,
   toUp = false,
   title,
-  valveColor,
+  valveColor = "gray",
   gapValve = "0px",
 }) => {
   const rotate = !toUp ? "rotate(90deg)" : "rotate(0deg)";
@@ -20,7 +20,7 @@ const Valve = ({
     >
       <img src="./valve.png" alt="valve" />
 
-      <div className="text-lg font-semibold" style={{ transform: titleRotate }}>
+      <div className="font-semibold" style={{ transform: titleRotate }}>
         {title}
       </div>
 
