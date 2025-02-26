@@ -165,8 +165,8 @@ const App = () => {
       <div ref={containerRef} className="relative">
         {!isSwap || (
           <>
-            <PlainText text="МАЗУТ С ПСТ-2" top={2} left={2570} />
-            <PlainText text="МАЗУТ С ЗГПН" top={2} left={1854} />
+            <PlainText text="МАЗУТ ПСТ-2" top={2} left={2570} />
+            <PlainText text="МАЗУТ ЗГПН" top={2} left={1854} />
 
             <FromPstToTank />
             <FromZgpnToTank />
@@ -272,8 +272,8 @@ const App = () => {
     >
       {!isSwap || (
         <>
-          <PlainText text="МАЗУТ С ПСТ-2" top={2} left={2570} />
-          <PlainText text="МАЗУТ С ЗГПН" top={2} left={1854} />
+          <PlainText text="МАЗУТ ПСТ-2" top={2} left={2570} />
+          <PlainText text="МАЗУТ ЗГПН" top={2} left={1854} />
           <FromPstToTank />
           <FromZgpnToTank />
         </>

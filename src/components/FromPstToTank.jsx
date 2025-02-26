@@ -63,33 +63,30 @@ const FromPstToTank = () => {
         color="#5fa6e3"
         thickness={4}
       />
-      <Line length={24} top={6} left={2420} color="#5fa6e3" thickness={4} />
+      <Line length={8} top={6} left={2420} color="#5fa6e3" thickness={4} />
 
-      <SmallValve top={30} left={2417} title={"76"} valveColor={"#5fa6e3"} />
-      <Line length={10} top={45} left={2420} color="#5fa6e3" thickness={4} />
+      <SmallValve top={14} left={2417} title={"76"} valveColor={"#5fa6e3"} />
+      <Line length={7} top={29} left={2420} color="#5fa6e3" thickness={4} />
       <Line
         isHorizontal
-        length={38}
-        top={52}
-        left={2386}
+        length={25}
+        top={32}
+        left={2398}
         color="#5fa6e3"
         thickness={4}
       />
-      <Line length={10} top={45} left={2386} color="#5fa6e3" thickness={4} />
-      <SmallValve top={30} left={2383} title={"75"} valveColor={"#5fa6e3"} />
-      <Line length={7} top={23} left={2385} color="#5fa6e3" thickness={4} />
-      <Line
-        isHorizontal
-        length={70}
-        top={21}
-        left={2319}
-        color="#5fa6e3"
-        thickness={4}
+
+      <SmallValve
+        toUp
+        top={24}
+        left={2383}
+        title={"75"}
+        valveColor={"#5fa6e3"}
       />
-      <Line length={15} top={21} left={2317} color="#5fa6e3" thickness={4} />
+
       <Line
         isHorizontal
-        length={57}
+        length={119}
         top={32}
         left={2264}
         color="#5fa6e3"
