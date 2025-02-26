@@ -3,6 +3,7 @@ import Line from "./sigments/Line";
 import Valve from "./sigments/Valve";
 import Arc from "./Arc";
 import ArcHorizontal from "./ArcHorizontal";
+import SmallValve from "./sigments/SmallValve";
 
 const FromPstToTank = () => {
   return (
@@ -53,30 +54,104 @@ const FromPstToTank = () => {
       <Line length={31} top={652} left={2523} color="#6b79e7" />
       <Valve top={622} left={2517} title={"A"} valveColor={"#6b79e7"} />
       <Line length={27} top={595} left={2523} color="#6b79e7" />
-      <Line isHorizontal top={7} length={140} left={2420} color="#5fa6e3" />
-      <Line length={20} top={10} left={2420} color="#5fa6e3" />
-      <Valve top={30} left={2414} title={"76"} valveColor={"#5fa6e3"} />
-      <Line length={10} top={60} left={2420} color="#5fa6e3" />
-      <Line isHorizontal length={66} top={63} left={2360} color="#5fa6e3" />
-      <Line length={7} top={60} left={2360} color="#5fa6e3" />
-      <Valve top={30} left={2354} title={"75"} valveColor={"#5fa6e3"} />
-      <Line length={7} top={23} left={2360} color="#5fa6e3" />
-      <Line isHorizontal length={70} top={21} left={2297} color="#5fa6e3" />
-      <Line length={32} top={21} left={2297} color="#5fa6e3" />
-      <Line isHorizontal length={40} top={47} left={2264} color="#5fa6e3" />
-      <Valve toUp top={30} left={2234} title={"ЗМ-44"} valveColor={"#5fa6e3"} />
-      <Line isHorizontal length={1357} top={47} left={877} color="#5fa6e3" />
-      <Line length={450} top={47} left={877} color="#5fa6e3" />
-      <Line isHorizontal length={114} top={490} left={769} color="#5fa6e3" />
-      <ArcHorizontal top={477} left={745} color="#5fa6e3" />
-      <Line isHorizontal length={136} top={490} left={616} color="#5fa6e3" />
-      <ArcHorizontal top={477} left={592} color="#5fa6e3" />
-      <Line isHorizontal length={62} top={496} left={356} color="#5fa6e3" />
-      <Valve toUp top={479} left={418} title={"ЗМ-10"} valveColor={"#5fa6e3"} />
-      <Line isHorizontal length={151} top={496} left={448} color="#5fa6e3" />
 
-      <Valve toUp top={479} left={326} title={"A"} valveColor={"#5fa6e3"} />
-      <Line isHorizontal length={36} top={496} left={290} color="#5fa6e3" />
+      <Line
+        isHorizontal
+        top={3}
+        length={140}
+        left={2420}
+        color="#5fa6e3"
+        thickness={4}
+      />
+      <Line length={24} top={6} left={2420} color="#5fa6e3" thickness={4} />
+
+      <SmallValve top={30} left={2417} title={"76"} valveColor={"#5fa6e3"} />
+      <Line length={10} top={45} left={2420} color="#5fa6e3" thickness={4} />
+      <Line
+        isHorizontal
+        length={38}
+        top={52}
+        left={2386}
+        color="#5fa6e3"
+        thickness={4}
+      />
+      <Line length={10} top={45} left={2386} color="#5fa6e3" thickness={4} />
+      <SmallValve top={30} left={2383} title={"75"} valveColor={"#5fa6e3"} />
+      <Line length={7} top={23} left={2385} color="#5fa6e3" thickness={4} />
+      <Line
+        isHorizontal
+        length={70}
+        top={21}
+        left={2319}
+        color="#5fa6e3"
+        thickness={4}
+      />
+      <Line length={15} top={21} left={2317} color="#5fa6e3" thickness={4} />
+      <Line
+        isHorizontal
+        length={57}
+        top={32}
+        left={2264}
+        color="#5fa6e3"
+        thickness={4}
+      />
+      <SmallValve
+        toUp
+        top={23}
+        left={2249}
+        title={"ЗМ-44"}
+        valveColor={"#5fa6e3"}
+      />
+      <Line
+        isHorizontal
+        length={1372}
+        top={31}
+        left={877}
+        color="#5fa6e3"
+        thickness={4}
+      />
+      <Line length={466} top={34} left={877} color="#5fa6e3" thickness={4} />
+      <Line
+        isHorizontal
+        length={432}
+        top={496}
+        left={448}
+        color="#5fa6e3"
+        thickness={4}
+      />
+
+      <Line
+        isHorizontal
+        length={83}
+        top={496}
+        left={350}
+        color="#5fa6e3"
+        thickness={4}
+      />
+      <SmallValve
+        toUp
+        top={487}
+        left={433}
+        title={"ЗМ-10"}
+        valveColor={"#5fa6e3"}
+      />
+
+      <Line
+        isHorizontal
+        length={45}
+        top={496}
+        left={290}
+        color="#5fa6e3"
+        thickness={4}
+      />
+      <SmallValve
+        toUp
+        top={488}
+        left={335}
+        title={"A"}
+        valveColor={"#5fa6e3"}
+      />
+
       <Line isHorizontal length={13} top={414} left={928} color="#6b79e7" />
       <ArcHorizontal top={401} left={898} color="#6b79e7" />
       <Line isHorizontal length={13} top={414} left={890} color="#6b79e7" />

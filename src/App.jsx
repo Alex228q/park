@@ -261,7 +261,7 @@ const App = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-screen h-screen overflow-auto cursor-grab"
+      className="absolute w-screen h-screen overflow-auto cursor-grab"
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
