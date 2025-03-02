@@ -80,6 +80,9 @@ const App = () => {
     deepMazut,
     pstMazut,
     isSwap,
+    setSelectedTank,
+    setSelectedReck,
+    setSelectedTankForSwap,
   } = useStore();
 
   useEffect(() => {
@@ -172,6 +175,101 @@ const App = () => {
             <FromZgpnToTank />
           </>
         )}
+
+        <div
+          className="flex flex-col space-y-4"
+          style={{
+            position: "absolute",
+            top: 100,
+            left: 8,
+          }}
+        >
+          {!isSwap ? (
+            <>
+              <select
+                key={3}
+                className="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700"
+                onChange={(e) => {
+                  setSelectedTank(e.target.value);
+                }}
+              >
+                <option className="bg-gray-100 text-gray-900">ОТКУДА</option>
+                <option value={"E-322"}>E-322</option>
+                <option value={"E-323"}>E-323</option>
+                <option value={"E-324"}>E-324</option>
+                <option value={"E-325"}>E-325</option>
+                <option value={"E-326"}>E-326</option>
+                <option value={"E-327"}>E-327</option>
+                <option value={"E-328"}>E-328</option>
+                <option value={"E-329"}>E-329</option>
+                <option value={"E-330"}>E-330</option>
+                <option value={"E-331"}>E-331</option>
+                <option value={"E-332"}>E-332</option>
+                <option value={"E-333"}>E-333</option>
+                <option value={"E-334"}>E-334</option>
+              </select>
+              <select
+                key={4}
+                className="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700"
+                onChange={(e) => {
+                  setSelectedReck(e.target.value);
+                }}
+              >
+                <option className="bg-gray-100 text-gray-900">КУДА</option>
+                <option value={"910-40 (1)"}>910-40 (1)</option>
+                <option value={"910-10 (2)"}>910-10 (2)</option>
+                <option value={"910-100 (3)"}>910-100 (3)</option>
+              </select>
+            </>
+          ) : (
+            <>
+              <select
+                key={1}
+                className="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700"
+                onChange={(e) => {
+                  setSelectedTank(e.target.value);
+                }}
+              >
+                <option className="bg-gray-100 text-gray-900">ОТКУДА</option>
+                <option value={"E-322"}>E-322</option>
+                <option value={"E-323"}>E-323</option>
+                <option value={"E-324"}>E-324</option>
+                <option value={"E-325"}>E-325</option>
+                <option value={"E-326"}>E-326</option>
+                <option value={"E-327"}>E-327</option>
+                <option value={"E-328"}>E-328</option>
+                <option value={"E-329"}>E-329</option>
+                <option value={"E-330"}>E-330</option>
+                <option value={"E-331"}>E-331</option>
+                <option value={"E-332"}>E-332</option>
+                <option value={"E-333"}>E-333</option>
+                <option value={"E-334"}>E-334</option>
+              </select>
+              <select
+                key={2}
+                className="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700"
+                onChange={(e) => {
+                  setSelectedTankForSwap(e.target.value);
+                }}
+              >
+                <option className="bg-gray-100 text-gray-900">КУДА</option>
+                <option value={"E-322"}>E-322</option>
+                <option value={"E-323"}>E-323</option>
+                <option value={"E-324"}>E-324</option>
+                <option value={"E-325"}>E-325</option>
+                <option value={"E-326"}>E-326</option>
+                <option value={"E-327"}>E-327</option>
+                <option value={"E-328"}>E-328</option>
+                <option value={"E-329"}>E-329</option>
+                <option value={"E-330"}>E-330</option>
+                <option value={"E-331"}>E-331</option>
+                <option value={"E-332"}>E-332</option>
+                <option value={"E-333"}>E-333</option>
+                <option value={"E-334"}>E-334</option>
+              </select>
+            </>
+          )}
+        </div>
 
         <SwapButton top={20} left={20} isSwap={isSwap} />
 
@@ -270,6 +368,100 @@ const App = () => {
         cursor: isDragging ? "grabbing" : "grab",
       }}
     >
+      <div
+        className="flex flex-col space-y-4"
+        style={{
+          position: "absolute",
+          top: 100,
+          left: 8,
+        }}
+      >
+        {!isSwap ? (
+          <>
+            <select
+              key={3}
+              className="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700"
+              onChange={(e) => {
+                setSelectedTank(e.target.value);
+              }}
+            >
+              <option className="bg-gray-100 text-gray-900">ОТКУДА</option>
+              <option value={"E-322"}>E-322</option>
+              <option value={"E-323"}>E-323</option>
+              <option value={"E-324"}>E-324</option>
+              <option value={"E-325"}>E-325</option>
+              <option value={"E-326"}>E-326</option>
+              <option value={"E-327"}>E-327</option>
+              <option value={"E-328"}>E-328</option>
+              <option value={"E-329"}>E-329</option>
+              <option value={"E-330"}>E-330</option>
+              <option value={"E-331"}>E-331</option>
+              <option value={"E-332"}>E-332</option>
+              <option value={"E-333"}>E-333</option>
+              <option value={"E-334"}>E-334</option>
+            </select>
+            <select
+              key={4}
+              className="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700"
+              onChange={(e) => {
+                setSelectedReck(e.target.value);
+              }}
+            >
+              <option className="bg-gray-100 text-gray-900">КУДА</option>
+              <option value={"910-40 (1)"}>910-40 (1)</option>
+              <option value={"910-10 (2)"}>910-10 (2)</option>
+              <option value={"910-100 (3)"}>910-100 (3)</option>
+            </select>
+          </>
+        ) : (
+          <>
+            <select
+              key={1}
+              className="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700"
+              onChange={(e) => {
+                setSelectedTank(e.target.value);
+              }}
+            >
+              <option className="bg-gray-100 text-gray-900">ОТКУДА</option>
+              <option value={"E-322"}>E-322</option>
+              <option value={"E-323"}>E-323</option>
+              <option value={"E-324"}>E-324</option>
+              <option value={"E-325"}>E-325</option>
+              <option value={"E-326"}>E-326</option>
+              <option value={"E-327"}>E-327</option>
+              <option value={"E-328"}>E-328</option>
+              <option value={"E-329"}>E-329</option>
+              <option value={"E-330"}>E-330</option>
+              <option value={"E-331"}>E-331</option>
+              <option value={"E-332"}>E-332</option>
+              <option value={"E-333"}>E-333</option>
+              <option value={"E-334"}>E-334</option>
+            </select>
+            <select
+              key={2}
+              className="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700"
+              onChange={(e) => {
+                setSelectedTankForSwap(e.target.value);
+              }}
+            >
+              <option className="bg-gray-100 text-gray-900">КУДА</option>
+              <option value={"E-322"}>E-322</option>
+              <option value={"E-323"}>E-323</option>
+              <option value={"E-324"}>E-324</option>
+              <option value={"E-325"}>E-325</option>
+              <option value={"E-326"}>E-326</option>
+              <option value={"E-327"}>E-327</option>
+              <option value={"E-328"}>E-328</option>
+              <option value={"E-329"}>E-329</option>
+              <option value={"E-330"}>E-330</option>
+              <option value={"E-331"}>E-331</option>
+              <option value={"E-332"}>E-332</option>
+              <option value={"E-333"}>E-333</option>
+              <option value={"E-334"}>E-334</option>
+            </select>
+          </>
+        )}
+      </div>
       {!isSwap || (
         <>
           <PlainText text="МАЗУТ ПСТ-2" top={2} left={2570} />

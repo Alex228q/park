@@ -18,6 +18,7 @@ const useStore = create((set) => ({
       ], // Сбрасываем pstMazut
       selectedReck: null, // Сбрасываем selectedReck
       selectedTank: null, // Сбрасываем selectedTank
+      selectedTankForSwap: null,
       selectedPumps: [], // Сбрасываем selectedPumps
       selectedPumps115: [], // Сбрасываем selectedPumps115
     })),
@@ -71,10 +72,18 @@ const useStore = create((set) => ({
       };
     }),
   selectedTank: null,
+  selectedTankForSwap: null,
 
   setSelectedTank: (itemId) =>
     set(() => ({
       selectedTank: itemId,
+      selectedPumps: [],
+      selectedPumps115: [],
+    })),
+
+  setSelectedTankForSwap: (itemId) =>
+    set(() => ({
+      selectedTankForSwap: itemId,
       selectedPumps: [],
       selectedPumps115: [],
     })),

@@ -1,14 +1,10 @@
 import useStore from "../store/store.js";
 
 const LoadingReck = ({ title, top = 0, left = 0 }) => {
-  const { selectedReck, setSelectedReck } = useStore();
+  const { selectedReck } = useStore();
 
-  const handleClick = () => {
-    setSelectedReck(title);
-  };
   return (
     <div
-      onClick={handleClick}
       className={`font-bold border-4 w-[550px] h-[150px] absolute flex justify-center items-center text-4xl ${
         selectedReck === title ? "bg-green-500" : "bg-white"
       }`}
