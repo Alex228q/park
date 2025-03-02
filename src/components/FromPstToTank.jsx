@@ -24,6 +24,56 @@ const FromPstToTank = () => {
         title={"17"}
         valveColor={"#6b79e7"}
       />
+
+      <Line top={59} left={2298} length={115} color="#6b79e7" thickness={4} />
+      <Line
+        isHorizontal
+        top={170}
+        left={2298}
+        length={40}
+        color="#6b79e7"
+        thickness={4}
+      />
+
+      <SmallValve
+        toUp
+        left={2338}
+        top={162}
+        title={"59"}
+        valveColor="#6b79e7"
+      />
+      <Line
+        isHorizontal
+        top={170}
+        left={2353}
+        length={20}
+        color="#6b79e7"
+        thickness={4}
+      />
+
+      <Line top={139} left={2370} length={35} color="#6b79e7" thickness={4} />
+      <Line
+        isHorizontal
+        top={139}
+        left={2370}
+        length={38}
+        color="#6b79e7"
+        thickness={4}
+      />
+
+      <Line top={139} left={2405} length={227} color="#6b79e7" thickness={4} />
+      <Line
+        isHorizontal
+        top={362}
+        left={2405}
+        length={123}
+        color="#6b79e7"
+        thickness={4}
+      />
+
+      <Line top={344} left={2522} length={21} color="#6b79e7" thickness={4} />
+      <Line top={296} left={2522} length={33} color="#6b79e7" thickness={4} />
+
       <Line
         top={29}
         isHorizontal
