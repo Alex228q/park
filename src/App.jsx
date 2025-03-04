@@ -70,6 +70,7 @@ import T331to115p from "./components/sigments/331to115p/T331to115p.jsx";
 import FromPstToTank from "./components/FromPstToTank.jsx";
 import SwapButton from "./components/SwapButton.jsx";
 import FromZgpnToTank from "./components/FromZgpnToTank.jsx";
+import DeepMazutSwap from "./components/sigments/DeepMazutSwap/DeepMazutSwap.jsx";
 
 const App = () => {
   const {
@@ -83,6 +84,7 @@ const App = () => {
     setSelectedTank,
     setSelectedReck,
     setSelectedTankForSwap,
+    selectedTankForSwap,
   } = useStore();
 
   useEffect(() => {
@@ -116,6 +118,15 @@ const App = () => {
       setSelectedPump115("H-3");
       setSelectedPump115("H-5");
     }
+
+    if (
+      isSwap &&
+      deepMazut.includes(selectedTankForSwap) &&
+      deepMazut.includes(selectedTank)
+    ) {
+      setSelectedPump("H-2");
+      setSelectedPump("H-3");
+    }
   }, [
     selectedTank,
     selectedReck,
@@ -123,6 +134,7 @@ const App = () => {
     setSelectedPump115,
     deepMazut,
     pstMazut,
+    selectedTankForSwap,
   ]);
 
   const [isDragging, setIsDragging] = useState(false);
@@ -270,7 +282,7 @@ const App = () => {
             </>
           )}
         </div>
-
+        <DeepMazutSwap />
         <SwapButton top={20} left={20} isSwap={isSwap} />
 
         <PlainText text="M-100 (ЗГПН) ->" top={1268} left={197} />
@@ -470,6 +482,8 @@ const App = () => {
           <FromZgpnToTank />
         </>
       )}
+
+      <DeepMazutSwap />
 
       <SwapButton top={20} left={20} isSwap={isSwap} />
       <PlainText text="M-100 (ЗГПН) ->" top={1268} left={197} />

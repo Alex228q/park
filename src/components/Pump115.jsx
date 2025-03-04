@@ -1,10 +1,12 @@
 import useStore from "../store/store.js";
 
 const Pump115 = ({ title, top = 0, left = 0 }) => {
-  const { selectedPumps115, setSelectedPump115 } = useStore();
+  const { selectedPumps115, setSelectedPump115, isSwap } = useStore();
 
   const handleClick = () => {
-    setSelectedPump115(title);
+    if (!isSwap) {
+      setSelectedPump115(title);
+    }
   };
 
   const isSelected = selectedPumps115.includes(title);
