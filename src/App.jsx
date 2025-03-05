@@ -71,6 +71,7 @@ import FromPstToTank from "./components/FromPstToTank.jsx";
 import SwapButton from "./components/SwapButton.jsx";
 import FromZgpnToTank from "./components/FromZgpnToTank.jsx";
 import DeepMazutSwap from "./components/sigments/DeepMazutSwap/DeepMazutSwap.jsx";
+import PstMazutSwap from "./components/sigments/PstMazutSwap/PstMazutSwap.jsx";
 
 const App = () => {
   const {
@@ -126,6 +127,15 @@ const App = () => {
     ) {
       setSelectedPump("H-2");
       setSelectedPump("H-3");
+    }
+
+    if (
+      isSwap &&
+      pstMazut.includes(selectedTankForSwap) &&
+      pstMazut.includes(selectedTank)
+    ) {
+      setSelectedPump("H-1");
+      setSelectedPump("H-4");
     }
   }, [
     selectedTank,
@@ -265,24 +275,37 @@ const App = () => {
                 }}
               >
                 <option className="bg-gray-100 text-gray-900">КУДА</option>
-                <option value={"E-322"}>E-322</option>
-                <option value={"E-323"}>E-323</option>
-                <option value={"E-324"}>E-324</option>
-                <option value={"E-325"}>E-325</option>
-                <option value={"E-326"}>E-326</option>
-                <option value={"E-327"}>E-327</option>
-                <option value={"E-328"}>E-328</option>
-                <option value={"E-329"}>E-329</option>
-                <option value={"E-330"}>E-330</option>
-                <option value={"E-331"}>E-331</option>
-                <option value={"E-332"}>E-332</option>
-                <option value={"E-333"}>E-333</option>
-                <option value={"E-334"}>E-334</option>
+                {pstMazut.includes(selectedTank) ? (
+                  <>
+                    <option value={"E-322"}>E-322</option>
+                    <option value={"E-323"}>E-323</option>
+                    <option value={"E-324"}>E-324</option>
+                    <option value={"E-325"}>E-325</option>
+                    <option value={"E-326"}>E-326</option>
+                    <option value={"E-332"}>E-332</option>
+                    <option value={"E-333"}>E-333</option>
+                    <option value={"E-334"}>E-334</option>
+                  </>
+                ) : (
+                  <>
+                    <option value={"E-327"}>E-327</option>
+                    <option value={"E-328"}>E-328</option>
+                    <option value={"E-329"}>E-329</option>
+                    <option value={"E-330"}>E-330</option>
+                    <option value={"E-331"}>E-331</option>
+                  </>
+                )}
               </select>
             </>
           )}
         </div>
-        <DeepMazutSwap />
+        {isSwap ? (
+          <>
+            <DeepMazutSwap />
+            <PstMazutSwap />
+          </>
+        ) : null}
+
         <SwapButton top={20} left={20} isSwap={isSwap} />
 
         <PlainText text="M-100 (ЗГПН) ->" top={1268} left={197} />
@@ -457,19 +480,26 @@ const App = () => {
               }}
             >
               <option className="bg-gray-100 text-gray-900">КУДА</option>
-              <option value={"E-322"}>E-322</option>
-              <option value={"E-323"}>E-323</option>
-              <option value={"E-324"}>E-324</option>
-              <option value={"E-325"}>E-325</option>
-              <option value={"E-326"}>E-326</option>
-              <option value={"E-327"}>E-327</option>
-              <option value={"E-328"}>E-328</option>
-              <option value={"E-329"}>E-329</option>
-              <option value={"E-330"}>E-330</option>
-              <option value={"E-331"}>E-331</option>
-              <option value={"E-332"}>E-332</option>
-              <option value={"E-333"}>E-333</option>
-              <option value={"E-334"}>E-334</option>
+              {pstMazut.includes(selectedTank) ? (
+                <>
+                  <option value={"E-322"}>E-322</option>
+                  <option value={"E-323"}>E-323</option>
+                  <option value={"E-324"}>E-324</option>
+                  <option value={"E-325"}>E-325</option>
+                  <option value={"E-326"}>E-326</option>
+                  <option value={"E-332"}>E-332</option>
+                  <option value={"E-333"}>E-333</option>
+                  <option value={"E-334"}>E-334</option>
+                </>
+              ) : (
+                <>
+                  <option value={"E-327"}>E-327</option>
+                  <option value={"E-328"}>E-328</option>
+                  <option value={"E-329"}>E-329</option>
+                  <option value={"E-330"}>E-330</option>
+                  <option value={"E-331"}>E-331</option>
+                </>
+              )}
             </select>
           </>
         )}
@@ -483,7 +513,12 @@ const App = () => {
         </>
       )}
 
-      <DeepMazutSwap />
+      {isSwap ? (
+        <>
+          <DeepMazutSwap />
+          <PstMazutSwap />
+        </>
+      ) : null}
 
       <SwapButton top={20} left={20} isSwap={isSwap} />
       <PlainText text="M-100 (ЗГПН) ->" top={1268} left={197} />
