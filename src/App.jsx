@@ -277,7 +277,6 @@ const App = () => {
                 <option className="bg-gray-100 text-gray-900">КУДА</option>
                 {pstMazut.includes(selectedTank) ? (
                   <>
-                    <option value={"E-322"}>E-322</option>
                     <option value={"E-323"}>E-323</option>
                     <option value={"E-324"}>E-324</option>
                     <option value={"E-325"}>E-325</option>
@@ -482,7 +481,6 @@ const App = () => {
               <option className="bg-gray-100 text-gray-900">КУДА</option>
               {pstMazut.includes(selectedTank) ? (
                 <>
-                  <option value={"E-322"}>E-322</option>
                   <option value={"E-323"}>E-323</option>
                   <option value={"E-324"}>E-324</option>
                   <option value={"E-325"}>E-325</option>
