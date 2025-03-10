@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, Suspense } from "react";
 import Blank from "./components/Blank.jsx";
 import BottomTanks from "./components/BottomTanks.jsx";
 import PumpStation35 from "./components/PumpStation35.jsx";
@@ -72,6 +72,7 @@ import SwapButton from "./components/SwapButton.jsx";
 import FromZgpnToTank from "./components/FromZgpnToTank.jsx";
 import DeepMazutSwap from "./components/sigments/DeepMazutSwap/DeepMazutSwap.jsx";
 import PstMazutSwap from "./components/sigments/PstMazutSwap/PstMazutSwap.jsx";
+import { FadeLoader } from "react-spinners";
 
 const App = () => {
   const {
@@ -187,206 +188,208 @@ const App = () => {
   };
   if (isMobile) {
     return (
-      <div ref={containerRef} className="relative">
-        {!isSwap || (
-          <>
-            <PlainText text="МАЗУТ ПСТ-2" top={2} left={2570} />
-            <PlainText text="МАЗУТ ЗГПН" top={2} left={1854} />
-
-            <FromPstToTank />
-            <FromZgpnToTank />
-          </>
-        )}
-
-        <div
-          className="flex flex-col space-y-4"
-          style={{
-            position: "absolute",
-            top: 100,
-            left: 8,
-          }}
-        >
-          {!isSwap ? (
+      <Suspense fallback={<FadeLoader color="lightblue" />}>
+        <div ref={containerRef} className="relative">
+          {!isSwap || (
             <>
-              <select
-                key={3}
-                className="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700"
-                onChange={(e) => {
-                  setSelectedTank(e.target.value);
-                }}
-              >
-                <option className="bg-gray-100 text-gray-900">ОТКУДА</option>
-                <option value={"E-322"}>E-322</option>
-                <option value={"E-323"}>E-323</option>
-                <option value={"E-324"}>E-324</option>
-                <option value={"E-325"}>E-325</option>
-                <option value={"E-326"}>E-326</option>
-                <option value={"E-327"}>E-327</option>
-                <option value={"E-328"}>E-328</option>
-                <option value={"E-329"}>E-329</option>
-                <option value={"E-330"}>E-330</option>
-                <option value={"E-331"}>E-331</option>
-                <option value={"E-332"}>E-332</option>
-                <option value={"E-333"}>E-333</option>
-                <option value={"E-334"}>E-334</option>
-              </select>
-              <select
-                key={4}
-                className="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700"
-                onChange={(e) => {
-                  setSelectedReck(e.target.value);
-                }}
-              >
-                <option className="bg-gray-100 text-gray-900">КУДА</option>
-                <option value={"910-40 (1)"}>910-40 (1)</option>
-                <option value={"910-10 (2)"}>910-10 (2)</option>
-                <option value={"910-100 (3)"}>910-100 (3)</option>
-              </select>
-            </>
-          ) : (
-            <>
-              <select
-                key={1}
-                className="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700"
-                onChange={(e) => {
-                  setSelectedTank(e.target.value);
-                }}
-              >
-                <option className="bg-gray-100 text-gray-900">ОТКУДА</option>
-                <option value={"E-322"}>E-322</option>
-                <option value={"E-323"}>E-323</option>
-                <option value={"E-324"}>E-324</option>
-                <option value={"E-325"}>E-325</option>
-                <option value={"E-326"}>E-326</option>
-                <option value={"E-327"}>E-327</option>
-                <option value={"E-328"}>E-328</option>
-                <option value={"E-329"}>E-329</option>
-                <option value={"E-330"}>E-330</option>
-                <option value={"E-331"}>E-331</option>
-                <option value={"E-332"}>E-332</option>
-                <option value={"E-333"}>E-333</option>
-                <option value={"E-334"}>E-334</option>
-              </select>
-              <select
-                key={2}
-                className="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700"
-                onChange={(e) => {
-                  setSelectedTankForSwap(e.target.value);
-                }}
-              >
-                <option className="bg-gray-100 text-gray-900">КУДА</option>
-                {pstMazut.includes(selectedTank) ? (
-                  <>
-                    <option value={"E-323"}>E-323</option>
-                    <option value={"E-324"}>E-324</option>
-                    <option value={"E-325"}>E-325</option>
-                    <option value={"E-326"}>E-326</option>
-                    <option value={"E-332"}>E-332</option>
-                    <option value={"E-333"}>E-333</option>
-                    <option value={"E-334"}>E-334</option>
-                  </>
-                ) : (
-                  <>
-                    <option value={"E-327"}>E-327</option>
-                    <option value={"E-328"}>E-328</option>
-                    <option value={"E-329"}>E-329</option>
-                    <option value={"E-330"}>E-330</option>
-                    <option value={"E-331"}>E-331</option>
-                  </>
-                )}
-              </select>
+              <PlainText text="МАЗУТ ПСТ-2" top={2} left={2570} />
+              <PlainText text="МАЗУТ ЗГПН" top={2} left={1854} />
+
+              <FromPstToTank />
+              <FromZgpnToTank />
             </>
           )}
+
+          <div
+            className="flex flex-col space-y-4"
+            style={{
+              position: "absolute",
+              top: 100,
+              left: 8,
+            }}
+          >
+            {!isSwap ? (
+              <>
+                <select
+                  key={3}
+                  className="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700"
+                  onChange={(e) => {
+                    setSelectedTank(e.target.value);
+                  }}
+                >
+                  <option className="bg-gray-100 text-gray-900">ОТКУДА</option>
+                  <option value={"E-322"}>E-322</option>
+                  <option value={"E-323"}>E-323</option>
+                  <option value={"E-324"}>E-324</option>
+                  <option value={"E-325"}>E-325</option>
+                  <option value={"E-326"}>E-326</option>
+                  <option value={"E-327"}>E-327</option>
+                  <option value={"E-328"}>E-328</option>
+                  <option value={"E-329"}>E-329</option>
+                  <option value={"E-330"}>E-330</option>
+                  <option value={"E-331"}>E-331</option>
+                  <option value={"E-332"}>E-332</option>
+                  <option value={"E-333"}>E-333</option>
+                  <option value={"E-334"}>E-334</option>
+                </select>
+                <select
+                  key={4}
+                  className="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700"
+                  onChange={(e) => {
+                    setSelectedReck(e.target.value);
+                  }}
+                >
+                  <option className="bg-gray-100 text-gray-900">КУДА</option>
+                  <option value={"910-40 (1)"}>910-40 (1)</option>
+                  <option value={"910-10 (2)"}>910-10 (2)</option>
+                  <option value={"910-100 (3)"}>910-100 (3)</option>
+                </select>
+              </>
+            ) : (
+              <>
+                <select
+                  key={1}
+                  className="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700"
+                  onChange={(e) => {
+                    setSelectedTank(e.target.value);
+                  }}
+                >
+                  <option className="bg-gray-100 text-gray-900">ОТКУДА</option>
+                  <option value={"E-322"}>E-322</option>
+                  <option value={"E-323"}>E-323</option>
+                  <option value={"E-324"}>E-324</option>
+                  <option value={"E-325"}>E-325</option>
+                  <option value={"E-326"}>E-326</option>
+                  <option value={"E-327"}>E-327</option>
+                  <option value={"E-328"}>E-328</option>
+                  <option value={"E-329"}>E-329</option>
+                  <option value={"E-330"}>E-330</option>
+                  <option value={"E-331"}>E-331</option>
+                  <option value={"E-332"}>E-332</option>
+                  <option value={"E-333"}>E-333</option>
+                  <option value={"E-334"}>E-334</option>
+                </select>
+                <select
+                  key={2}
+                  className="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700"
+                  onChange={(e) => {
+                    setSelectedTankForSwap(e.target.value);
+                  }}
+                >
+                  <option className="bg-gray-100 text-gray-900">КУДА</option>
+                  {pstMazut.includes(selectedTank) ? (
+                    <>
+                      <option value={"E-323"}>E-323</option>
+                      <option value={"E-324"}>E-324</option>
+                      <option value={"E-325"}>E-325</option>
+                      <option value={"E-326"}>E-326</option>
+                      <option value={"E-332"}>E-332</option>
+                      <option value={"E-333"}>E-333</option>
+                      <option value={"E-334"}>E-334</option>
+                    </>
+                  ) : (
+                    <>
+                      <option value={"E-327"}>E-327</option>
+                      <option value={"E-328"}>E-328</option>
+                      <option value={"E-329"}>E-329</option>
+                      <option value={"E-330"}>E-330</option>
+                      <option value={"E-331"}>E-331</option>
+                    </>
+                  )}
+                </select>
+              </>
+            )}
+          </div>
+          {isSwap ? (
+            <>
+              <DeepMazutSwap />
+              <PstMazutSwap />
+            </>
+          ) : null}
+
+          <SwapButton top={20} left={20} isSwap={isSwap} />
+
+          <PlainText text="M-100 (ЗГПН) ->" top={1268} left={197} />
+          <PlainText text="Ф-5 (ПСТ) ->" top={1238} left={229} />
+          <TopTanks />
+          <BottomTanks />
+          <T322to35 />
+          <T323to35 />
+          <T324to35 />
+          <T325to35 />
+          <T326to35 />
+          <T327to35 />
+          <T328to35 />
+          <T329to35 />
+          <T330to35 />
+          {deepMazut.includes("E-331") ? <T331to35 /> : <T331pto35 />}
+
+          <T332to35 />
+          <T333to35 />
+          <T334to35 />
+
+          <PumpStation35 />
+
+          <Pump1to40 />
+          <Pump2to40 />
+          <Pump3to40 />
+          <Pump4to40 />
+
+          <Pump1to10 />
+          <Pump2to10 />
+          <Pump3to10 />
+          <Pump4to10 />
+
+          <Pump1to10d />
+          <Pump2to10d />
+          <Pump3to10d />
+          <Pump4to10d />
+
+          <Pump1to40d />
+          <Pump2to40d />
+          <Pump3to40d />
+          <Pump4to40d />
+          <PumpStation115 />
+          <T322to115 />
+          <T323to115 />
+          <T324to115 />
+          <T325to115 />
+          <T326to115 />
+          <T332to115 />
+          <T333to115 />
+          <T334to115 />
+
+          <T327to115 />
+          <T328to115 />
+          <T329to115 />
+          <T330to115 />
+          {deepMazut.includes("E-331") ? <T331to115 /> : <T331to115p />}
+
+          <Pump1to100 />
+          <Pump2to100 />
+          <Pump3to100 />
+          <Pump4to100 />
+          <Pump5to100 />
+
+          <Pump1to100p />
+          <Pump2to100p />
+          <Pump3to100p />
+          <Pump4to100p />
+          <Pump5to100p />
+
+          {isSwap || (
+            <>
+              <LoadingReck title="910-40 (1)" top={1900} left={3000} />
+              <LoadingReck title="910-10 (2)" top={2200} left={3000} />
+              <LoadingReck title="910-100 (3)" top={2200} left={200} />
+            </>
+          )}
+
+          <LockBlock34 />
+
+          <Blank top={2240} left={3480} />
         </div>
-        {isSwap ? (
-          <>
-            <DeepMazutSwap />
-            <PstMazutSwap />
-          </>
-        ) : null}
-
-        <SwapButton top={20} left={20} isSwap={isSwap} />
-
-        <PlainText text="M-100 (ЗГПН) ->" top={1268} left={197} />
-        <PlainText text="Ф-5 (ПСТ) ->" top={1238} left={229} />
-        <TopTanks />
-        <BottomTanks />
-        <T322to35 />
-        <T323to35 />
-        <T324to35 />
-        <T325to35 />
-        <T326to35 />
-        <T327to35 />
-        <T328to35 />
-        <T329to35 />
-        <T330to35 />
-        {deepMazut.includes("E-331") ? <T331to35 /> : <T331pto35 />}
-
-        <T332to35 />
-        <T333to35 />
-        <T334to35 />
-
-        <PumpStation35 />
-
-        <Pump1to40 />
-        <Pump2to40 />
-        <Pump3to40 />
-        <Pump4to40 />
-
-        <Pump1to10 />
-        <Pump2to10 />
-        <Pump3to10 />
-        <Pump4to10 />
-
-        <Pump1to10d />
-        <Pump2to10d />
-        <Pump3to10d />
-        <Pump4to10d />
-
-        <Pump1to40d />
-        <Pump2to40d />
-        <Pump3to40d />
-        <Pump4to40d />
-        <PumpStation115 />
-        <T322to115 />
-        <T323to115 />
-        <T324to115 />
-        <T325to115 />
-        <T326to115 />
-        <T332to115 />
-        <T333to115 />
-        <T334to115 />
-
-        <T327to115 />
-        <T328to115 />
-        <T329to115 />
-        <T330to115 />
-        {deepMazut.includes("E-331") ? <T331to115 /> : <T331to115p />}
-
-        <Pump1to100 />
-        <Pump2to100 />
-        <Pump3to100 />
-        <Pump4to100 />
-        <Pump5to100 />
-
-        <Pump1to100p />
-        <Pump2to100p />
-        <Pump3to100p />
-        <Pump4to100p />
-        <Pump5to100p />
-
-        {isSwap || (
-          <>
-            <LoadingReck title="910-40 (1)" top={1900} left={3000} />
-            <LoadingReck title="910-10 (2)" top={2200} left={3000} />
-            <LoadingReck title="910-100 (3)" top={2200} left={200} />
-          </>
-        )}
-
-        <LockBlock34 />
-
-        <Blank top={2240} left={3480} />
-      </div>
+      </Suspense>
     );
   }
 
